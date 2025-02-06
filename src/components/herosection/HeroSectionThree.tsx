@@ -104,7 +104,7 @@ function HeroSectionThree() {
                 </div>
 
                 <button className="flex ml-[45%] gap-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold py-4 px-8 rounded-full mt-8 ">
-                <ChevronDoubleDownIcon className="w-6 h-6" /> View More
+                    <ChevronDoubleDownIcon className="w-6 h-6" /> View More
                 </button>
             </div>
         </>
