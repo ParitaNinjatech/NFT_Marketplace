@@ -57,7 +57,7 @@ function TeamOverview() {
     return (
         <div className="container mx-auto px-4 py-8">
             <div >
-                <h1 className='text-3xl font-bold text-gray-800 mb-10'>Meet Our Team</h1>
+                <h1 className='text-3xl font-bold text-gray-800 mb-4'>Meet Our Team</h1>
                 <p className=' mb-10 text-gray-600 text-center'>Our platform is powered by a passionate team of blockchain developers, digital artists, product managers, and industry experts. We come from diverse backgrounds, united by our shared mission of bringing NFTs to the forefront of digital culture. </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

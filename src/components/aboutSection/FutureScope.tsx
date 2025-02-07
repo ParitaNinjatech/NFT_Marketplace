@@ -4,7 +4,7 @@ function FutureScope() {
     return (
         <div className="container mx-auto px-4 py-8">
 
-            <h1 className='text-3xl font-bold text-gray-800 mb-10'>Future Scope</h1>
+            <h1 className='text-3xl font-bold text-gray-800 mb-4'>Future Scope</h1>
             <p className='mb-10 text-gray-600 text-center'>We believe in the long-term potential of NFTs, and our vision for the platform is ever-evolving. Over the next few years, we aim to introduce new features and partnerships that will help shape the future of the NFT ecosystem.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  ">
                 <div className="bg-white rounded-lg  row-span-2 shadow-md  p-4 border border-purple-400 hover:scale-105 transition duration-1500"
