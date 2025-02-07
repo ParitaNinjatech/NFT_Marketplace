@@ -89,7 +89,7 @@ function HeroSectionThree() {
                 <h1 className='text-3xl font-bold text-gray-800 mb-10'>Discover NFTs</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {nfts.map((nft: any, index: number) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-115 transition duration-1500 sm:hover:scale-115 transition duration-1500 ">
                             <img
                                 src={nft.image}
                                 alt={nft.name}

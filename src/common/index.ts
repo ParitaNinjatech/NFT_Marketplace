@@ -14,9 +14,14 @@ import {
     Bars4Icon,
     XCircleIcon,
     ArrowUpRightIcon,
-    ChevronDoubleDownIcon
+    ChevronDoubleDownIcon,
+    ShieldCheckIcon,
+    Squares2X2Icon,
+    WalletIcon,
+    WrenchScrewdriverIcon,
+    LockClosedIcon
 } from "@heroicons/react/24/outline";
-import { Link, Route, Routes, BrowserRouter,useLocation } from "react-router-dom"
+import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom"
 
 
 export {
@@ -34,7 +39,12 @@ export {
     XMarkIcon,
     Bars4Icon,
     XCircleIcon,
-    Link, Route, Routes, BrowserRouter,useLocation,
+    Link, Route, Routes, BrowserRouter, useLocation,
     ArrowUpRightIcon,
-    ChevronDoubleDownIcon
+    ChevronDoubleDownIcon,
+    ShieldCheckIcon,
+    Squares2X2Icon,
+    WalletIcon,
+    WrenchScrewdriverIcon,
+    LockClosedIcon
 }

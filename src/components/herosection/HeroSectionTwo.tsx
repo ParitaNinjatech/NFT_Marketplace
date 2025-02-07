@@ -89,7 +89,7 @@ function HeroSectionTwo() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {creators.map((creator: any, index: number) => (
-                    <div key={index} className="bg-white rounded-lg shadow-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <div key={index} className="bg-white rounded-lg shadow-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-115 transition duration-1500">
                         <img
                             src={creator.image}
                             alt={creator.name}

@@ -11,7 +11,7 @@ import {
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { Carousel, HeroSectionone, HeroSectionTwo, HeroSectionThree } from "../../components/index";
+import { Carousel, HeroSectionone, HeroSectionTwo, HeroSectionThree, HeroSectionFour, HeroSectionFive } from "../../components/index";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ function Header() {
                             <a href="#">Buy NFT</a>
                             <a href="#">Auction NFT</a>
                             <a href="#">Stake NFT</a>
-                            <a href="#">About Us</a>
+                            <a href="/aboutUs">About Us</a>
                         </div>
 
                         <div className="flex space-x-2 sm:space-x-4 items-center">
@@ -61,7 +61,7 @@ function Header() {
                             <a href="#" className="block py-2">Buy NFT</a>
                             <a href="#" className="block py-2">Auction NFT</a>
                             <a href="#" className="block py-2">Stake NFT</a>
-                            <a href="#" className="block py-2">About Us</a>
+                            <a href="/aboutUs" className="block py-2">About Us</a>
                         </div>
                     )}
 
@@ -133,11 +133,19 @@ function Header() {
                 </div>
 
                 <div className='mt-14'>
-                <HeroSectionTwo/>
+                    <HeroSectionTwo />
                 </div>
 
                 <div className='mt-14'>
-                <HeroSectionThree/>
+                    <HeroSectionThree />
+                </div>
+
+                <div className='mt-14'>
+                    <HeroSectionFour />
+                </div>
+
+                <div className='mt-14'>
+                    <HeroSectionFive />
                 </div>
             </div>
         </>

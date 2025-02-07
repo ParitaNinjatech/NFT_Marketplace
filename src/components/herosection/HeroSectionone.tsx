@@ -56,9 +56,9 @@ function HeroSectionone() {
             <button className='flex items-center justify-center gap-2 border border-purple-600 text-purple-700 font-bold w-30 h-15 rounded-lg'>View All<ArrowUpRightIcon className='w-4 h-4' /></button>
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {collections.map((collection: any, index: number) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-115 transition duration-1500">
               <img
                 src={collection.image}
                 alt={collection.name}

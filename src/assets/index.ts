@@ -16,6 +16,23 @@ import Cea5 from "./Cea5.jpeg";
 import Cea6 from "./Cea6.jpeg";
 import Cea7 from "./Cea7.jpeg";
 import Cea8 from "./Cea8.jpeg";
+import Wallet from "./Wallet.gif";
+import NFTArt from "./ArtWork.gif";
+import Upload from "./upload.gif";
+import FaceBook from "./facebook.png";
+import Social from "./social.png";
+import Telegram from "./telegram.png";
+import Youtube from "./youtube.png";
+import Discord from "./discord.png";
+import Team1 from "./Team1.jpeg";
+import Team2 from "./Team2.jpeg";
+import Team3 from "./Team3.jpeg";
+import Team4 from "./Team4.jpeg";
+import Team5 from "./Team5.jpeg";
+import Team6 from "./Team6.jpeg";
+import Team7 from "./Team7.jpeg";
+import Team8 from "./Team8.jpeg";
+
 
 export {
     Logo,
@@ -35,5 +52,14 @@ export {
     Cea5,
     Cea6,
     Cea7,
-    Cea8
+    Cea8,
+    Wallet,
+    NFTArt,
+    Upload,
+    FaceBook,
+    Social,
+    Telegram,
+    Youtube,
+    Discord,
+    Team1,Team2,Team3,Team4,Team5,Team6,Team7,Team8
 }
