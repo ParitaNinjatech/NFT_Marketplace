@@ -11,7 +11,7 @@ import {
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { PlatformOverview, TeamOverview, FutureScope } from "../../components"
+import { PlatformOverview, TeamOverview, FutureScope, FeaturesList,OwnerMap } from "../../components"
 
 
 function AboutUs() {
@@ -121,6 +121,9 @@ function AboutUs() {
             </div>
 
             <div><FutureScope /></div>
+            <div><FeaturesList /></div>
+            <div><OwnerMap /></div>
+
         </div>
     )
 }

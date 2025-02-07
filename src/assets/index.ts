@@ -32,7 +32,14 @@ import Team5 from "./Team5.jpeg";
 import Team6 from "./Team6.jpeg";
 import Team7 from "./Team7.jpeg";
 import Team8 from "./Team8.jpeg";
-
+import TeamWork from "./teamwork.gif";
+import Artist from "./artist.gif";
+import NFT from "./nft.gif";
+import World from "./Global.gif";
+import Grid from "./grid.gif";
+import Shield from "./shield.gif";
+import Hammer from "./Hammer.gif";
+import Create from "./Create.gif";
 
 export {
     Logo,
@@ -61,5 +68,5 @@ export {
     Telegram,
     Youtube,
     Discord,
-    Team1,Team2,Team3,Team4,Team5,Team6,Team7,Team8
+    Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8, TeamWork, Artist, NFT, World, Grid, Shield, Hammer, Create
 }

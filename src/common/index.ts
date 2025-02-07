@@ -19,7 +19,8 @@ import {
     Squares2X2Icon,
     WalletIcon,
     WrenchScrewdriverIcon,
-    LockClosedIcon
+    LockClosedIcon,
+    Cog8ToothIcon
 } from "@heroicons/react/24/outline";
 import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom"
 
@@ -46,5 +47,5 @@ export {
     Squares2X2Icon,
     WalletIcon,
     WrenchScrewdriverIcon,
-    LockClosedIcon
+    LockClosedIcon,Cog8ToothIcon
 }

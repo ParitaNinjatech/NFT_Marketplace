@@ -11,6 +11,8 @@ import AboutUs from "./aboutus/AboutUs";
 import PlatformOverview from "./aboutSection/PlatformOverview";
 import TeamOverview from "./aboutSection/TeamOverview";
 import FutureScope from "./aboutSection/FutureScope";
+import FeaturesList from "./aboutSection/FeaturesList";
+import OwnerMap from "./aboutSection/OwnerMap";
 
 export {
     Home,
@@ -25,5 +27,7 @@ export {
     AboutUs,
     PlatformOverview,
     TeamOverview,
-    FutureScope
+    FutureScope,
+    FeaturesList,
+    OwnerMap
 }
