@@ -13,6 +13,11 @@ import TeamOverview from "./aboutSection/TeamOverview";
 import FutureScope from "./aboutSection/FutureScope";
 import FeaturesList from "./aboutSection/FeaturesList";
 import OwnerMap from "./aboutSection/OwnerMap";
+import ContactUs from "./contactUs/ContactUs";
+import CreateNFT from "./createNFT/CreateNFT";
+import CreateSectionOne from "./createSection/CreateSectionOne";
+import MintProgressBar from "./processBar/MintProgressBar";
+import CreateSectionTwo from "./createSection/CreateSectionTwo";
 
 export {
     Home,
@@ -29,5 +34,10 @@ export {
     TeamOverview,
     FutureScope,
     FeaturesList,
-    OwnerMap
+    OwnerMap,
+    ContactUs,
+    CreateNFT,
+    CreateSectionOne,
+    MintProgressBar,
+    CreateSectionTwo
 }

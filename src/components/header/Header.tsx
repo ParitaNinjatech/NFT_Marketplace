@@ -11,11 +11,12 @@ import {
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { Carousel, HeroSectionone, HeroSectionTwo, HeroSectionThree, HeroSectionFour, HeroSectionFive } from "../../components/index";
+import { Carousel, HeroSectionone, HeroSectionTwo, HeroSectionThree, HeroSectionFour, HeroSectionFive, ContactUs } from "../../components/index";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <>
@@ -29,7 +30,7 @@ function Header() {
                             </div>
                         </Link>
                         <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
-                            <a href="#">Create NFT</a>
+                            <a href="/createNFT">Create NFT</a>
                             <a href="#">Buy NFT</a>
                             <a href="#">Auction NFT</a>
                             <a href="#">Stake NFT</a>
@@ -45,7 +46,7 @@ function Header() {
                                 Wallet Connect
                             </button>
 
-                            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hidden sm:block">
+                            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hidden sm:block" onClick={() => setIsModalOpen(true)}>
                                 Contact us →
                             </button>
 
@@ -57,7 +58,7 @@ function Header() {
 
                     {isOpen && (
                         <div className="md:hidden flex flex-col items-start bg-white p-5 rounded-lg shadow-lg absolute top-[130px] left-[53%] w-[35%]">
-                            <a href="#" className="block py-2">Create NFT</a>
+                            <a href="/createNFT" className="block py-2">Create NFT</a>
                             <a href="#" className="block py-2">Buy NFT</a>
                             <a href="#" className="block py-2">Auction NFT</a>
                             <a href="#" className="block py-2">Stake NFT</a>
@@ -148,6 +149,11 @@ function Header() {
                     <HeroSectionFive />
                 </div>
             </div>
+
+            {
+                isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
+            }
+
         </>
     );
 }

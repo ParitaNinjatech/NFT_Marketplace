@@ -9,7 +9,7 @@ import {
 function Footer() {
     return (
         <div className='m-4'>
-            <div className="bg-gradient-to-r from-purple-300 to-pink-200 flex flex-col items-center rounded-2xl p-6">
+            <div className="bg-gradient-to-r from-purple-300 to-pink-200 flex flex-col items-center rounded-2xl p-6 ">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                     {/* First Column */}
                     <div className="p-4">
@@ -17,8 +17,8 @@ function Footer() {
                         <p className="text-gray-600 text-center sm:text-left">Experience a seamless, secure, and innovative NFT marketplace where creators and collectors can easily mint, trade, and explore a diverse range of digital assets.</p>
 
                         <br />
-                        <h3 className="text-md text-purple-900 mb-2 text-center sm:text-left">Join Our Community</h3>
-                        <div className='flex justify-center sm:justify-start gap-6'>
+                        <h3 className="text-md text-purple-900 mb-2 text-center sm:text-left hover:font-bold">Join Our Community</h3>
+                        <div className='flex justify-center sm:justify-start gap-6 '>
                             <img src={Social} className='w-8 h-8 cursor-pointer' alt="Social Media" />
                             <img src={Telegram} className='w-8 h-8 cursor-pointer' alt="Telegram" />
                             <img src={Youtube} className='w-8 h-8 cursor-pointer' alt="Youtube" />
@@ -30,31 +30,31 @@ function Footer() {
 
                     <div className="flex  justify-start md:justify-start gap-8 p-4">
                         <div>
-                            <h3 className="text-xl font-semibold mb-2 text-center sm:text-left">Explore</h3>
-                            <p className="text-gray-600">Marketplace</p>
-                            <p className="text-gray-600">Rankings</p>
-                            <p className="text-gray-600">Creators</p>
-                            <p className="text-gray-600">Collectors</p>
-                            <p className="text-gray-600">Auctions</p>
-                            <p className="text-gray-600">Staking</p>
+                            <h3 className="text-xl font-semibold mb-2 text-center sm:text-left hover:font-bold">Explore</h3>
+                            <p className="text-gray-600 hover:font-bold">Marketplace</p>
+                            <p className="text-gray-600 hover:font-bold">Rankings</p>
+                            <p className="text-gray-600 hover:font-bold">Creators</p>
+                            <p className="text-gray-600 hover:font-bold">Collectors</p>
+                            <p className="text-gray-600 hover:font-bold">Auctions</p>
+                            <p className="text-gray-600 hover:font-bold">Staking</p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-semibold mb-2 text-center sm:text-left">Resources</h3>
-                            <p className="text-gray-600">Help</p>
-                            <p className="text-gray-600">Contact</p>
-                            <p className="text-gray-600">About Us</p>
-                            <p className="text-gray-600">Terms of Service</p>
-                            <p className="text-gray-600">Privacy Policy</p>
+                            <p className="text-gray-600 hover:font-bold">Help</p>
+                            <p className="text-gray-600 hover:font-bold">Contact</p>
+                            <p className="text-gray-600 hover:font-bold">About Us</p>
+                            <p className="text-gray-600 hover:font-bold">Terms of Service</p>
+                            <p className="text-gray-600 hover:font-bold">Privacy Policy</p>
                         </div>
 
                         <div>
                             <h3 className="text-xl font-semibold mb-2 text-center sm:text-left">Community</h3>
-                            <p className="text-gray-600">Join Community</p>
-                            <p className="text-gray-600">News & Blog</p>
-                            <p className="text-gray-600">Events</p>
-                            <p className="text-gray-600">Brand Assets</p>
-                            <p className="text-gray-600">Press Contact</p>
+                            <p className="text-gray-600 hover:font-bold">Join Community</p>
+                            <p className="text-gray-600 hover:font-bold">News & Blog</p>
+                            <p className="text-gray-600 hover:font-bold">Events</p>
+                            <p className="text-gray-600 hover:font-bold">Brand Assets</p>
+                            <p className="text-gray-600 hover:font-bold">Press Contact</p>
                         </div>
                     </div>
 

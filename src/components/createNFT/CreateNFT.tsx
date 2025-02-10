@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Logo } from '../../assets';
 import {
@@ -11,14 +12,12 @@ import {
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { PlatformOverview, TeamOverview, FutureScope, FeaturesList, OwnerMap, ContactUs } from "../../components"
-
-
-function AboutUs() {
+import ContactUs from '../contactUs/ContactUs';
+import CreateSectionOne from '../createSection/CreateSectionOne';
+function CreateNFT() {
     const [isOpen, setIsOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     return (
         <div className='m-4'>
             <div className="bg-gradient-to-r from-purple-300 to-pink-200 flex flex-col items-center rounded-2xl">
@@ -105,33 +104,25 @@ function AboutUs() {
                 )}
 
                 <div className="flex flex-col items-center justify-center text-center mt-10 px-4 mb-10">
-                    <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-                        About Us
+                    <h1 className="text-3xl md:text-5xl font-bold text-gray-900 ">
+                        Create Your NFT
                     </h1>
-                    <p className="mt-4 text-gray-600 max-w-2xl">
-                        Welcome to our NFT Marketplace – a revolutionary platform designed for creators, collectors, and enthusiasts alike. Our goal is to bridge the gap between digital art and blockchain technology, providing a seamless space for minting, trading, and exploring NFTs. Below is a detailed overview of who we are, our vision, and what makes us unique.
-                    </p>
+                    <p className="mt-4 text-gray-600 max-w-2xl ">
+                        NFTs (Non-Fungible Tokens) are unique digital assets stored on a blockchain, representing items like art, music, videos, and more. This platform lets you easily mint and share your own creations, whether they’re art, collectibles, or other digital goods. Follow the steps below to create and share your NFT!</p>
                 </div>
-            </div>
 
-            <div>
-                <PlatformOverview />
+               
             </div>
+            <div className='mb-16 '>
+                <CreateSectionOne/>
+                </div>
 
-            <div>
-                <TeamOverview />
-            </div>
-
-            <div><FutureScope /></div>
-            <div><FeaturesList /></div>
-            <div><OwnerMap /></div>
             {
                 isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
             }
         </div>
 
-
     )
 }
 
-export default AboutUs
+export default CreateNFT
