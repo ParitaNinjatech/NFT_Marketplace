@@ -111,11 +111,11 @@ function CreateNFT() {
                         NFTs (Non-Fungible Tokens) are unique digital assets stored on a blockchain, representing items like art, music, videos, and more. This platform lets you easily mint and share your own creations, whether they’re art, collectibles, or other digital goods. Follow the steps below to create and share your NFT!</p>
                 </div>
 
-               
+
             </div>
             <div className='mb-16 '>
-                <CreateSectionOne/>
-                </div>
+                <CreateSectionOne />
+            </div>
 
             {
                 isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
