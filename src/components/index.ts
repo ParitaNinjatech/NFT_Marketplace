@@ -18,6 +18,8 @@ import CreateNFT from "./createNFT/CreateNFT";
 import CreateSectionOne from "./createSection/CreateSectionOne";
 import MintProgressBar from "./processBar/MintProgressBar";
 import CreateSectionTwo from "./createSection/CreateSectionTwo";
+import ListSale from "./listSale/ListSale";
+import ListSectionOne from "./listSection/ListSectionOne";
 
 export {
     Home,
@@ -39,5 +41,7 @@ export {
     CreateNFT,
     CreateSectionOne,
     MintProgressBar,
-    CreateSectionTwo
+    CreateSectionTwo,
+    ListSale,
+    ListSectionOne
 }

@@ -42,7 +42,8 @@ import Hammer from "./Hammer.gif";
 import Create from "./Create.gif";
 import Required from "./required.png";
 import UploadImage from "./upload1.png";
-import CheckMark from "./check-mark.png"
+import CheckMark from "./check-mark.png";
+import Redirect from "./RedirectIcon.png";
 export {
     Logo,
     HomePageLogo,
@@ -71,5 +72,5 @@ export {
     Youtube,
     Discord,
     Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8, TeamWork, Artist, NFT, World, Grid, Shield, Hammer, Create, Required,
-    UploadImage,CheckMark
+    UploadImage, CheckMark, Redirect
 }

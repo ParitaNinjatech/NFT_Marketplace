@@ -10,6 +10,7 @@ import {
     Bars4Icon,
     XMarkIcon,
     Link,
+    ArrowLongRightIcon,
 } from "../../common/index";
 import { Carousel, HeroSectionone, HeroSectionTwo, HeroSectionThree, HeroSectionFour, HeroSectionFive, ContactUs } from "../../components/index";
 
@@ -26,10 +27,10 @@ function Header() {
                         <Link to="/" >
                             <div className="flex items-center space-x-2">
                                 <img src={Logo} alt="NFT Logo" className="h-8" />
-                                <span className="text-purple-700 font-bold text-lg">NFT</span>
+                                <span className="text-purple-700 font-bold text-lg outfit-bold">NFT</span>
                             </div>
                         </Link>
-                        <div className="hidden md:flex space-x-6 text-gray-700 font-medium">
+                        <div className="hidden md:flex space-x-6 text-gray-700 font-medium outfit-bold">
                             <a href="/createNFT">Create NFT</a>
                             <a href="#">Buy NFT</a>
                             <a href="#">Auction NFT</a>
@@ -37,7 +38,7 @@ function Header() {
                             <a href="/aboutUs">About Us</a>
                         </div>
 
-                        <div className="flex space-x-2 sm:space-x-4 items-center">
+                        <div className="flex space-x-2 sm:space-x-4 items-center outfit-bold">
                             <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                                 <div className='bg-gradient-to-r from-purple-500 to-pink-400 p-3 rounded-full'></div>
                             </button>
@@ -46,8 +47,8 @@ function Header() {
                                 Wallet Connect
                             </button>
 
-                            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hidden sm:block" onClick={() => setIsModalOpen(true)}>
-                                Contact us →
+                            <button className="bg-gradient-to-r from-purple-500 to-pink-400 text-white px-5 py-2 rounded-lg hidden sm:block" onClick={() => setIsModalOpen(true)}>
+                                Contact Us
                             </button>
 
                             <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
@@ -57,7 +58,7 @@ function Header() {
                     </nav>
 
                     {isOpen && (
-                        <div className="md:hidden flex flex-col items-start bg-white p-5 rounded-lg shadow-lg absolute top-[130px] left-[53%] w-[35%]">
+                        <div className="md:hidden outfit-bold flex flex-col items-start bg-white p-5 rounded-lg shadow-lg absolute top-[130px] left-[53%] w-[35%]">
                             <a href="/createNFT" className="block py-2">Create NFT</a>
                             <a href="#" className="block py-2">Buy NFT</a>
                             <a href="#" className="block py-2">Auction NFT</a>
@@ -67,7 +68,7 @@ function Header() {
                     )}
 
                     {isMenuOpen && (
-                        <div className="flex flex-col items-start bg-white p-2 rounded-lg shadow-lg absolute top-[103px] lg:right-[27%] lg:w-[9%] sm:w-[25%] sm:right-[47%] sm:top-[120px]">
+                        <div className="flex flex-col outfit-bold items-start bg-white p-2 rounded-lg shadow-lg absolute top-[103px] lg:right-[27%] lg:w-[9%] sm:w-[25%] sm:right-[47%] sm:top-[120px]">
                             <ul className="space-y-2">
                                 <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
                                     <UserIcon className="h-5 w-5 text-gray-600" />
@@ -105,20 +106,21 @@ function Header() {
                     )}
 
                     <div className="flex flex-col items-center justify-center text-center mt-10 px-4">
-                        <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+                        <h1 className="text-2xl md:text-5xl  text-gray-900 outfit-bold">
                             Discover Digital Art & Collect NFTs
                         </h1>
-                        <p className="mt-4 text-gray-600 max-w-2xl">
+                        <p className="mt-4 text-gray-600 max-w-2xl outfit-light">
                             Elevate your digital collectible experience by unleashing the power of our NFT marketplace.
                             Explore, acquire, and trade unique crypto collectibles and NFTs in a world of exclusive digital assets.
                         </p>
-
-                        <div className="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold w-full sm:w-auto">
-                                Explore →
+                        <div className="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 outfit-bold">
+                            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-2">
+                                Explore NFTs <ArrowLongRightIcon className="w-5 h-5" />
                             </button>
                             <button className="border border-purple-600 text-purple-600 px-6 py-3 rounded-lg flex items-center justify-center w-full sm:w-auto">
-                                ⏵ How it works
+                                <Link to="/aboutUs">
+                                    About Us
+                                </Link>
                             </button>
                         </div>
 

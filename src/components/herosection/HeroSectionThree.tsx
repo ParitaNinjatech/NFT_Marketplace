@@ -86,7 +86,7 @@ function HeroSectionThree() {
     return (
         <>
             <div className="container mx-auto px-4 py-8">
-                <h1 className='text-3xl font-bold text-gray-800 mb-10'>Discover NFTs</h1>
+                <h1 className='text-3xl font-bold outfit-bold text-gray-800 mb-10'>Discover NFTs</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {nfts.map((nft: any, index: number) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-115 transition duration-1500 sm:hover:scale-115 transition duration-1500 ">
@@ -96,14 +96,14 @@ function HeroSectionThree() {
                                 className="w-full h-40 object-cover"
                             />
                             <div className="p-4">
-                                <h3 className="text-md font-bold">{nft.name}</h3>
-                                <p className="text-gray-500 text-sm">Price: {nft.floor}</p>
+                                <h3 className="text-lg font-bold outfit-bold">{nft.name}</h3>
+                                <p className="text-gray-500 text-md outfit-light">Price: {nft.floor}</p>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <button className="flex ml-[45%] gap-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold py-4 px-8 rounded-full mt-8 ">
+                <button className="flex outfit-bold text-md ml-[45%] gap-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold py-4 px-8 rounded-full mt-8 ">
                     <ChevronDoubleDownIcon className="w-6 h-6" /> View More
                 </button>
             </div>

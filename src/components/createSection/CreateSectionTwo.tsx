@@ -1,15 +1,16 @@
-import { ArrowUpRightIcon, XCircleIcon } from '../../common';
-import { Cea1 } from '../../assets';
+import { ArrowUpRightIcon, Link, XCircleIcon } from '../../common';
+import { Cea1, Redirect } from '../../assets';
 
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
-function CreateSectionTwo({ isOpen, onClose }: ModalProps) {
+function CreateSectionTwo({ onClose }: ModalProps) {
+    const  id :any = "3"
     return (
         <div
-            className="fixed inset-0 z-50 bg-gry-900 bg-opacity-50 backdrop-blur-md flex justify-center items-center"
+            className="fixed inset-0 z-50 bg-gry-900 bg-opacity-50 backdrop-blur-md flex justify-center items-center outfit-bold"
             onClick={onClose}
         >
             <div
@@ -22,18 +23,20 @@ function CreateSectionTwo({ isOpen, onClose }: ModalProps) {
                 >
                     <XCircleIcon className="w-8 h-8 sm:w-12 sm:h-12 text-purple-600" />
                 </button>
-                <h2 className="text-3xl font-semibold text-gray-800 text-center">My NFT</h2>
-                <img src={Cea1} alt="" className='w-[30%] h-[30%] ml-[35%] mt-10' />
+                <img src={Cea1} alt="" className='w-[32%] h-[35%] ml-[35%]' />
+                <h2 className="text-2xl  text-gray-800 text-center  mt-10">Your item has been Minted </h2>
 
-                <div className='flex justify-center item-center mt-10 gap-6 ml-[28%]'>
-                    <button className='bg-gradient-to-r from-purple-500 to-pink-400 text-white w-40 h-14 rounded-full mt-6 mb-4  transform -translate-x-1/2'>List Item</button>
+                <div className='flex justify-center item-center mt-8 gap-6 ml-[30%]'>
+                    <Link to={`/listItem/${id}/sell`}>
+                    <button className='bg-white to-pink-400 text-purple-600 w-40 h-14 rounded-full mt-6 mb-4 border border-purple-600 transform -translate-x-1/2'>List Item</button>
+                    </Link>
                     <button className="bg-gradient-to-r from-purple-500 to-pink-400 text-white w-40 h-14 rounded-full mt-6 mb-4 transform -translate-x-1/2 flex items-center justify-center gap-2">
                         View Item
                         <ArrowUpRightIcon className="w-5 h-5" />
                     </button>
                 </div>
 
-                <h4 className='text-center text-blue-500 mt-6 underline flex items-center justify-center'>View Scan <ArrowUpRightIcon className="w-5 h-5 underline" /></h4>
+                <h4 className='text-center text-gray-900 text-lg mt-6 underline flex items-center justify-center gap-2 hover:text-gray-600'>View on Polygonscan <img src={Redirect} alt='' className='w-4 h-4' /></h4>
             </div>
         </div>
     )

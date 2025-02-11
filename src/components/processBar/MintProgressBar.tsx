@@ -8,11 +8,13 @@ import "./MintProgressBar.css"
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onMintComplete: (isSuccess: boolean) => void;
 }
 
-const MintingProgressBar = ({ isOpen, onClose }: ModalProps) => {
+const MintingProgressBar = ({ onClose, onMintComplete }: ModalProps) => {
   const [step, setStep] = useState(1);
   const [openModal, setOpenModal] = useState<boolean>(false)
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,16 +26,17 @@ const MintingProgressBar = ({ isOpen, onClose }: ModalProps) => {
 
   useEffect(() => {
     if (step === 4) {
+      const isSuccess = true;
+
+      onMintComplete(isSuccess);
       const timeout = setTimeout(() => {
         onClose();
+
       }, 10000);
 
-      if (isOpen == false) {
-        setOpenModal(true);
-      }
       return () => clearTimeout(timeout);
     }
-  }, [step,isOpen, onClose]);
+  }, [step, onMintComplete, onClose]);
   return (
     <div
       className="fixed inset-0 z-50 bg-gry-900 bg-opacity-50 backdrop-blur-md flex justify-center items-center"
@@ -102,6 +105,7 @@ const MintingProgressBar = ({ isOpen, onClose }: ModalProps) => {
               <div className="flex mt-8 mb-10">
                 <img src={Shield} alt="" className="w-24 h-24 ml-24" />
                 <p className="text-md mt-8">All Transactions Done!</p>
+
               </div>
             )
           }

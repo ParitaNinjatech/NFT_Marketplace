@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+.outfit-light {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 300; /* Adjust the weight as needed */
+    font-style: normal;
+}
+
+.outfit-bold {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Adjust the weight as needed */
+    font-style: normal;
+}

@@ -51,9 +51,9 @@ function HeroSectionone() {
     <>
       <div className="container mx-auto px-4 py-8">
         <div className='flex justify-between'>
-          <h1 className='text-3xl font-bold text-gray-800 mb-10'>Top Collections</h1>
+          <h1 className='text-3xl font-bold text-gray-800 mb-10 outfit-bold'>Top Collections</h1>
           <Link to="/explore">
-            <button className='flex items-center justify-center gap-2 border border-purple-600 text-purple-700 font-bold w-30 h-15 rounded-lg'>View All<ArrowUpRightIcon className='w-4 h-4' /></button>
+            <button className='flex items-center justify-center gap-2 border border-purple-600 text-purple-700 text-lg font-bold w-30 h-15 rounded-lg outfit-bold'>View All<ArrowUpRightIcon className='w-4 h-4' /></button>
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -65,9 +65,9 @@ function HeroSectionone() {
                 className="w-full h-40 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-md font-bold">{collection.name}</h3>
-                <p className="text-gray-500 text-sm">Floor: {collection.floor}</p>
-                <p className="text-gray-500 text-sm">Total volume: {collection.volume}</p>
+                <h3 className="text-lg font-bold outfit-bold">{collection.name}</h3>
+                <p className="text-gray-500 text-md outfit-light">Floor: {collection.floor}</p>
+                <p className="text-gray-500 text-md outfit-light">Total volume: {collection.volume}</p>
               </div>
             </div>
           ))}

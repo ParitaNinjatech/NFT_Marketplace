@@ -1,6 +1,4 @@
-
 import { useState } from 'react';
-import { Logo } from '../../assets';
 import {
     UserIcon,
     EyeIcon,
@@ -12,11 +10,15 @@ import {
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { CreateSectionOne, ContactUs } from '../index';
-function CreateNFT() {
+import { Logo } from '../../assets';
+import { ContactUs, ListSectionOne } from '../index';
+
+
+function ListSale() {
     const [isOpen, setIsOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <div className='m-4'>
             <div className="bg-gradient-to-r from-purple-300 to-pink-200 flex flex-col items-center rounded-2xl">
@@ -104,24 +106,22 @@ function CreateNFT() {
 
                 <div className="flex flex-col items-center justify-center text-center mt-10 px-4 mb-10">
                     <h1 className="text-2xl outfit-bold md:text-5xl font-bold text-gray-900 ">
-                        Create Your NFT
+                        List for Sale
                     </h1>
                     <p className="outfit-light mt-4 text-gray-600 max-w-2xl ">
-                        NFTs are unique digital assets on the blockchain, like art, music, and more. This platform allows you to easily mint and share your own creations.</p>
+                        Join our Sale Event! Bid in live auctions or buy instantly at great prices. Limited-time offers, secure transactions, and exclusive deals—Bid Now or Shop Now before they’re gone</p>
                 </div>
 
 
             </div>
-            <div className='mb-16 '>
-                <CreateSectionOne />
+            <div>
+                <ListSectionOne />
             </div>
-
             {
                 isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
             }
         </div>
-
     )
 }
 
-export default CreateNFT
+export default ListSale

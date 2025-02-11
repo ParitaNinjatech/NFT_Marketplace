@@ -85,7 +85,7 @@ function HeroSectionTwo() {
     return (
         <div className="container mx-auto px-4 py-8">
             <div className='flex justify-between'>
-                <h1 className='text-3xl font-bold text-gray-800 mb-10'>Top Creators</h1>
+                <h1 className='text-3xl font-bold outfit-bold text-gray-800 mb-10'>Top Creators</h1>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {creators.map((creator: any, index: number) => (
@@ -96,8 +96,8 @@ function HeroSectionTwo() {
                             className="w-40 h-40 rounded-full object-cover ml-12 "
                         />
                         <div className="p-4">
-                            <h3 className="text-md font-bold text-center">{creator.name}</h3>
-                            <p className="text-gray-500 text-sm text-center">Total Sales: {creator.totalSales}</p>
+                            <h3 className="text-lg font-bold outfit-bold text-center">{creator.name}</h3>
+                            <p className="text-gray-500 text-md text-center outfit-light">Total Sales: {creator.totalSales}</p>
                         </div>
                     </div>
                 ))}

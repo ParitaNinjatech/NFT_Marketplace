@@ -21,7 +21,8 @@ import {
     WrenchScrewdriverIcon,
     LockClosedIcon,
     Cog8ToothIcon,
-    CheckIcon
+    CheckIcon,
+    ArrowLongRightIcon
 } from "@heroicons/react/24/outline";
 import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom"
 import { PencilIcon, TrashIcon, PlusIcon } from "@heroicons/react/24/outline";
@@ -52,5 +53,5 @@ export {
     WalletIcon,
     WrenchScrewdriverIcon,
     LockClosedIcon, Cog8ToothIcon,
-    PencilIcon, TrashIcon, PlusIcon, Dialog, CheckIcon, Circle
+    PencilIcon, TrashIcon, PlusIcon, Dialog, CheckIcon, Circle , ArrowLongRightIcon
 }
