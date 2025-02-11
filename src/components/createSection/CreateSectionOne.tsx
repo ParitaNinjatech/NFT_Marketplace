@@ -13,8 +13,8 @@ interface Trait {
 function CreateSectionOne() {
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
     const [traits, setTraits] = useState<Trait[]>([]);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
     const [currentTrait, setCurrentTrait] = useState<Trait | null>(null);
     const [isProcess, setIsProcess] = useState<boolean>(false);
     const [mintingSuccess, setMintingSuccess] = useState<boolean | null>(null);

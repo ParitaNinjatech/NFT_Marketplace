@@ -5,6 +5,7 @@ const ListSectionOne = () => {
     const [saleType, setSaleType] = useState<string>("fixed");
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [nftPrice, setNFTPrice] = useState<number>(0);
+    
     return (
         <div className="container mx-auto mt-16">
             <div className="flex justify-center gap-[15%] flex-wrap">
