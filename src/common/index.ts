@@ -22,10 +22,12 @@ import {
     LockClosedIcon,
     Cog8ToothIcon,
     CheckIcon,
-    ArrowLongRightIcon
+    ArrowLongRightIcon, HeartIcon, PaperClipIcon, SparklesIcon, EyeSlashIcon, ClockIcon,
+    ShoppingCartIcon, ChevronDownIcon, Bars3BottomRightIcon ,QrCodeIcon
 } from "@heroicons/react/24/outline";
-import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom"
+import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import { PencilIcon, TrashIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { Circle } from "lucide-react";
 import { Dialog } from "@headlessui/react";
 
@@ -53,5 +55,7 @@ export {
     WalletIcon,
     WrenchScrewdriverIcon,
     LockClosedIcon, Cog8ToothIcon,
-    PencilIcon, TrashIcon, PlusIcon, Dialog, CheckIcon, Circle , ArrowLongRightIcon
+    PencilIcon, TrashIcon, PlusIcon, Dialog, CheckIcon, Circle, ArrowLongRightIcon, HeartIcon,
+    PaperClipIcon, SparklesIcon, EyeSlashIcon, ClockIcon, ShoppingCartIcon, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+    ChevronDownIcon, Bars3BottomRightIcon , QrCodeIcon
 }

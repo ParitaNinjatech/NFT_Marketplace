@@ -25,6 +25,7 @@ function CreateSectionOne() {
     };
 
 
+
     const openModal = (trait?: Trait) => {
         setCurrentTrait(trait || { id: Date.now(), key: "", value: "" });
         setIsModalOpen(true);

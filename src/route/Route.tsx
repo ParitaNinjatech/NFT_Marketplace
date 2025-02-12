@@ -1,4 +1,4 @@
-import { Home, Footer, AboutUs, CreateNFT, ListSale } from "../components/index";
+import { Home, Footer, AboutUs, CreateNFT, ListSale, NFTDetails } from "../components/index";
 import { Routes, Route, useLocation } from "../common/index";
 
 export default function Router() {
@@ -10,7 +10,9 @@ export default function Router() {
                 <Route path="/" element={<Home />} />
                 <Route path="/aboutus" element={<AboutUs />} />
                 <Route path="/createNFT" element={<CreateNFT />} />
-                <Route path="/listItem/:id/sell" element={<ListSale />} />
+                <Route path="/createdItem/:id/sell" element={<ListSale />} />
+                <Route path="/listItem/:id" element={<NFTDetails />} />
+
             </Routes>
             {!noHeaderRoutes.includes(location.pathname) && <Footer />}
         </>

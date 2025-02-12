@@ -20,6 +20,10 @@ import MintProgressBar from "./processBar/MintProgressBar";
 import CreateSectionTwo from "./createSection/CreateSectionTwo";
 import ListSale from "./listSale/ListSale";
 import ListSectionOne from "./listSection/ListSectionOne";
+import ListProgressBar from "./processBar/ListProgressBar";
+import ListSectionTwo from "./listSection/ListSectionTwo";
+import NFTDetails from "./nftDetails/NFTDetails";
+import NFTDetailSectionOne from "./nftDetailSection/NFTDetailSectionOne";
 
 export {
     Home,
@@ -43,5 +47,9 @@ export {
     MintProgressBar,
     CreateSectionTwo,
     ListSale,
-    ListSectionOne
+    ListSectionOne,
+    ListProgressBar,
+    ListSectionTwo,
+    NFTDetails,
+    NFTDetailSectionOne
 }

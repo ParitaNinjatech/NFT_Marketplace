@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { Cea1 } from "../../assets";
+import { ListProgressBar,ListSectionTwo } from "../index";
 
 const ListSectionOne = () => {
     const [saleType, setSaleType] = useState<string>("fixed");
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [nftPrice, setNFTPrice] = useState<number>(0);
-    
+    const [openModal, setOpenModal] = useState<boolean>(false);
+    const [loadingforLoader, setLoadingforLoader] = useState<boolean>(false);
+    const [listingSuccess, setListingSuccess] = useState<boolean | null>(null);
+    const handleListingComplete = (isSuccess: boolean) => {
+        setListingSuccess(isSuccess);
+        console.log("listing completed. Success:", isSuccess);
+    };
+
     return (
         <div className="container mx-auto mt-16">
             <div className="flex justify-center gap-[15%] flex-wrap">
@@ -150,7 +158,7 @@ const ListSectionOne = () => {
                             )
                         }
                         <button
-                            className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 mt-6 rounded-lg "
+                            className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 mt-6 rounded-lg " onClick={() => setOpenModal(true)}
 
                         >
                             Complete listing
@@ -170,7 +178,19 @@ const ListSectionOne = () => {
                     <p className="font-bold mt-2 text-lg text-purple-600 outfit-bold text-center">{nftPrice || "--"} ETH</p>
                 </div>
             </div>
+            {
+                listingSuccess && (
+                    <ListSectionTwo onClose={() => setListingSuccess(false)} isOpen={listingSuccess} saleType={saleType} />
+                )
+            }
+            {
+                openModal && (
+                    <ListProgressBar loading={true} onCloseLoading={() => setLoadingforLoader(false)} isOpen={openModal} onClose={() => setOpenModal(false)} onMintComplete={handleListingComplete} />
+                )
+            }
+
         </div>
+
     );
 };
 

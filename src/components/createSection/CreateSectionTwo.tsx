@@ -27,7 +27,7 @@ function CreateSectionTwo({ onClose }: ModalProps) {
                 <h2 className="text-2xl  text-gray-800 text-center  mt-10">Your item has been Minted </h2>
 
                 <div className='flex justify-center item-center mt-8 gap-6 ml-[30%]'>
-                    <Link to={`/listItem/${id}/sell`}>
+                    <Link to={`/createdItem/${id}/sell`}>
                     <button className='bg-white to-pink-400 text-purple-600 w-40 h-14 rounded-full mt-6 mb-4 border border-purple-600 transform -translate-x-1/2'>List Item</button>
                     </Link>
                     <button className="bg-gradient-to-r from-purple-500 to-pink-400 text-white w-40 h-14 rounded-full mt-6 mb-4 transform -translate-x-1/2 flex items-center justify-center gap-2">
