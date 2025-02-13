@@ -45,7 +45,10 @@ import UploadImage from "./upload1.png";
 import CheckMark from "./check-mark.png";
 import Redirect from "./RedirectIcon.png";
 import Cilp from "./paperclip-vertical.png";
-import HandHeart from "./heart.png"
+import HandHeart from "./heart.png";
+import AirDrop from "./parachute.png";
+import BlankFile from "./BlankList.png";
+import Offers from "./Offers.png";
 
 export {
     Logo,
@@ -75,5 +78,5 @@ export {
     Youtube,
     Discord,
     Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8, TeamWork, Artist, NFT, World, Grid, Shield, Hammer, Create, Required,
-    UploadImage, CheckMark, Redirect, Cilp, HandHeart
+    UploadImage, CheckMark, Redirect, Cilp, HandHeart, AirDrop, BlankFile, Offers
 }

@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import { Cea1, HandHeart } from '../../assets';
+import { AirDrop, Cea1, HandHeart } from '../../assets';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import {
     ClockIcon, EyeIcon, HeartIcon, PaperClipIcon, ShoppingCartIcon, SparklesIcon, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
     ChevronDownIcon, Bars3BottomRightIcon,
     QrCodeIcon,
-    TagIcon, ArrowsRightLeftIcon, ChevronUpIcon
+    TagIcon, ArrowsRightLeftIcon, ChevronUpIcon,
+    WalletIcon,
+    QuestionMarkCircleIcon,
 } from '../../common';
-import { BuyingProgressBar } from "../index"
-
+import { PlaceBid } from "../index"
 
 interface Activity {
     event: string;
@@ -18,7 +19,6 @@ interface Activity {
     date: string;
 }
 
-
 const getIcon = (event: string) => {
     switch (event) {
         case "List":
@@ -27,22 +27,26 @@ const getIcon = (event: string) => {
             return <ArrowsRightLeftIcon className="text-gray-500 w-4 h-4" />;
         case "Sale":
             return <ShoppingCartIcon className="text-gray-500 w-4 h-4" />;
+        case "AirDrop":
+            return <img src={AirDrop} alt='' className="text-gray-500 w-4 h-4" />;
+        case "Mint":
+            return <SparklesIcon className="text-gray-500 w-4 h-4" />;
         default:
             return null;
     }
 };
 
-function NFTDetailSectionOne() {
+function NFTDetailsAuctionSection() {
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
     const [isHovered, setIsHovered] = useState<boolean>(false);
+    const [isHovered2, setIsHovered2] = useState<boolean>(false);
     const [isTableVisible, setIsTableVisible] = useState<boolean>(false);
     const [isPriceVisible, setIsPriceVisible] = useState<boolean>(false);
     const [isDescriptionVisible, setIsDescriptionVisible] = useState<boolean>(false);
     const [isItemVisible, setIsItemVisible] = useState<boolean>(false);
     const [isFilterVisible, setIsFilterVisible] = useState<boolean>(false);
-    const [buyingprocess,setBuyingProcess] = useState<boolean>(false)
+    const [isPlaceBid, setIsPlaceBid] = useState<boolean>(false);
     const [search, setSearch] = useState("");
-
 
     const handleToggleTable = () => {
         setIsTableVisible(!isTableVisible);
@@ -86,6 +90,10 @@ function NFTDetailSectionOne() {
         { event: "Sale", price: "0.0028 ETH", from: "odysseyfuckmarket.eth", to: "AT-PEACE", date: "19h ago" },
         { event: "List", price: "0.0028 ETH", from: "odysseyfuckmarket.eth", to: "", date: "19h ago" },
         { event: "Transfer", from: "E31ED8", to: "odysseyfuckmarket.eth", date: "19h ago" },
+        { event: "Mint", from: "E31ED8", to: "odysseyfuckmarket.eth", date: "19h ago" },
+        { event: "AirDrop", from: "E31ED8", to: "odysseyfuckmarket.eth", date: "19h ago" },
+
+
     ];
     const filteredActivities = activities.filter(
         (activity) =>
@@ -97,7 +105,6 @@ function NFTDetailSectionOne() {
     const handleToggleFavorite = () => {
         setIsFavorite(!isFavorite);
     };
-
     return (
         <div className="container mx-auto mt-16  flex flex-wrap justify-center gap-[10%]">
             <div className="w-full md:w-[45%] lg:w-[40%] h-auto flex flex-col items-center mb-3"
@@ -227,7 +234,7 @@ function NFTDetailSectionOne() {
             <div className="w-full md:w-[45%] lg:w-[40%] mt-4 md:mt-0">
                 <div className='mb-4'>
                     <button className="w-32 ml-[77%] mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 rounded-lg flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
-                        Cancel Sale</button>
+                        Cancel Auction</button>
                 </div>
                 <div>
                     <h3 className="text-3xl font-bold mb-2 outfit-bold">MyNFT</h3>
@@ -248,29 +255,49 @@ function NFTDetailSectionOne() {
 
                 <div className="border border-purple-400 p-6 rounded-lg mt-8 w-full"
                     style={{ boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1), 0px 1px 10px rgba(255, 105, 180, 0.5), 0px 10px 50px rgba(204, 153, 255, 0.3)" }}>
-                    <div className="border-b border-purple-400">
+                    <div className="relative border-b border-purple-400 flex justify-between">
                         <h2 className="flex text-xl text-gray-800 outfit-bold font-semibold mb-2 gap-2">
                             <ClockIcon className="w-5 h-5 mt-1 outfit-bold text-gray-800" />
                             Sale ends 13 April 2025 at 4:08 pm
                         </h2>
+
+                        <div className="relative">
+                            <QuestionMarkCircleIcon
+                                className="w-6 h-6 mt-1 outfit-bold text-gray-800 cursor-pointer"
+                                onMouseEnter={() => setIsHovered2(true)}
+                                onMouseLeave={() => setIsHovered2(false)}
+                            />
+                            {isHovered2 && (
+                                <div className="absolute bg-gray-800 text-white text-center text-xs p-2 rounded-lg mt-2 mr-24 max-w-md whitespace-nowrap ">
+                                    <p>Highest bid in the last 10 minutes extends
+
+                                        <br />auction by 10 minutes.
+                                    </p>
+                                </div>
+                            )}
+
+                        </div>
+
                     </div>
 
                     <div>
-                        <h2 className="text-md text-gray-800 outfit-light font-semibold mt-4">Current Price</h2>
+                        <h2 className="text-md text-gray-800 outfit-light font-semibold mt-4">Minimum bid -- Reserve price not met.
+                        </h2>
                         <div className="flex gap-2">
                             <h2 className="text-2xl text-gray-800 outfit-bold font-semibold mt-1">0.0033 ETH</h2>
                             <h2 className="text-sm text-gray-800 outfit-light font-semibold mt-3">$8.67</h2>
                         </div>
 
-                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 rounded-lg flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300" onClick={() =>setBuyingProcess(true)}>
-                            <span>Buy Now</span>
-                            <ShoppingCartIcon className="w-10 h-7 ml-3" />
+                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 rounded-lg flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300" onClick={() => setIsPlaceBid(true)}>
+                            <WalletIcon className="w-10 h-7 ml-3" />
+                            <span>Place bid</span>
                         </button>
 
                         <div className="mt-6 flex gap-3">
                             <img src={HandHeart} alt="" className="w-10 h-10" />
                             <h2 className="text-md text-gray-800 outfit-light font-semibold">
-                                Supports creator. This listing is paying the collection creator their suggested creator earnings.
+                                Supports creator This listing is paying the collection creator their suggested creator earnings.
+
                             </h2>
                         </div>
                     </div>
@@ -312,7 +339,7 @@ function NFTDetailSectionOne() {
                     <div className="border-b border-purple-400 flex items-center gap-[77%]">
                         <h2 className="text-xl text-gray-800 outfit-bold font-semibold mb-4">📊 Listings</h2>
                         {
-                            isTableVisible ? (
+                            !isTableVisible ? (
 
                                 <ChevronDownIcon className="w-6 h-6 text-purple-500 cursor-pointer font-semibold" onClick={handleToggleTable} />
                             ) : (
@@ -421,6 +448,26 @@ function NFTDetailSectionOne() {
                                                         />
                                                         List
                                                     </label>
+                                                    <label className="flex items-center mt-3">
+                                                        <input
+                                                            type="radio"
+                                                            value="AirDrop"
+                                                            checked={search === "AirDrop"}
+                                                            onChange={(e) => setSearch(e.target.value)}
+                                                            className="mr-2"
+                                                        />
+                                                        AirDrop
+                                                    </label>
+                                                    <label className="flex items-center mt-3">
+                                                        <input
+                                                            type="radio"
+                                                            value="Mint"
+                                                            checked={search === "Mint"}
+                                                            onChange={(e) => setSearch(e.target.value)}
+                                                            className="mr-2"
+                                                        />
+                                                        Mint
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -459,12 +506,11 @@ function NFTDetailSectionOne() {
                 </div>
             </div>
             {
-            buyingprocess && 
-            <BuyingProgressBar isOpen={buyingprocess} onClose={() => setBuyingProcess(false)} />
-        }
+                isPlaceBid && 
+                <PlaceBid isOpen={isPlaceBid} onClose={() => setIsPlaceBid(false)}/>
+            }
         </div>
-       
-    );
+    )
 }
 
-export default NFTDetailSectionOne;
+export default NFTDetailsAuctionSection;

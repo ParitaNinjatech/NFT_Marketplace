@@ -24,6 +24,13 @@ import ListProgressBar from "./processBar/ListProgressBar";
 import ListSectionTwo from "./listSection/ListSectionTwo";
 import NFTDetails from "./nftDetails/NFTDetails";
 import NFTDetailSectionOne from "./nftDetailSection/NFTDetailSectionOne";
+import NFTAuctionDetails from "./nftDetails/NFTAuctionDetails";
+import NFTDetailsAuctionSection from "./nftDetailSection/NFTDetailsAuctionSection";
+import NFTCreateDetails from "./nftDetails/NFTCreateDetails";
+import NFTCreateDetailsSection from "./nftDetailSection/NFTCreateDetailsSection";
+import BuyingProgressBar from "./processBar/BuyProgressBar";
+import PlaceBid from "./placeBid/PlaceBid";
+import BuyNFT from "./buyNFT/BuyNFT";
 
 export {
     Home,
@@ -51,5 +58,12 @@ export {
     ListProgressBar,
     ListSectionTwo,
     NFTDetails,
-    NFTDetailSectionOne
+    NFTDetailSectionOne,
+    NFTAuctionDetails,
+    NFTDetailsAuctionSection,
+    NFTCreateDetails,
+    NFTCreateDetailsSection,
+    BuyingProgressBar,
+    PlaceBid,
+    BuyNFT
 }

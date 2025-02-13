@@ -23,7 +23,8 @@ import {
     Cog8ToothIcon,
     CheckIcon,
     ArrowLongRightIcon, HeartIcon, PaperClipIcon, SparklesIcon, EyeSlashIcon, ClockIcon,
-    ShoppingCartIcon, ChevronDownIcon, Bars3BottomRightIcon ,QrCodeIcon
+    ShoppingCartIcon, ChevronDownIcon, Bars3BottomRightIcon, QrCodeIcon, TagIcon,
+    ArrowsRightLeftIcon, ChevronUpIcon, QueueListIcon, BanknotesIcon ,Bars3BottomLeftIcon
 } from "@heroicons/react/24/outline";
 import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import { PencilIcon, TrashIcon, PlusIcon } from "@heroicons/react/24/outline";
@@ -57,5 +58,6 @@ export {
     LockClosedIcon, Cog8ToothIcon,
     PencilIcon, TrashIcon, PlusIcon, Dialog, CheckIcon, Circle, ArrowLongRightIcon, HeartIcon,
     PaperClipIcon, SparklesIcon, EyeSlashIcon, ClockIcon, ShoppingCartIcon, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-    ChevronDownIcon, Bars3BottomRightIcon , QrCodeIcon
+    ChevronDownIcon, Bars3BottomRightIcon, QrCodeIcon, TagIcon, ArrowsRightLeftIcon, ChevronUpIcon, QueueListIcon, BanknotesIcon,Bars3BottomLeftIcon
+    
 }

@@ -30,10 +30,12 @@ function CreateSectionTwo({ onClose }: ModalProps) {
                     <Link to={`/createdItem/${id}/sell`}>
                     <button className='bg-white to-pink-400 text-purple-600 w-40 h-14 rounded-full mt-6 mb-4 border border-purple-600 transform -translate-x-1/2'>List Item</button>
                     </Link>
+                    <Link to={"/createItem/3"}>
                     <button className="bg-gradient-to-r from-purple-500 to-pink-400 text-white w-40 h-14 rounded-full mt-6 mb-4 transform -translate-x-1/2 flex items-center justify-center gap-2">
                         View Item
                         <ArrowUpRightIcon className="w-5 h-5" />
                     </button>
+                    </Link>
                 </div>
 
                 <h4 className='text-center text-gray-900 text-lg mt-6 underline flex items-center justify-center gap-2 hover:text-gray-600'>View on Polygonscan <img src={Redirect} alt='' className='w-4 h-4' /></h4>
