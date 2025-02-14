@@ -7,9 +7,9 @@ import {
     Link,
 } from "../../common/index";
 import { Logo } from '../../assets';
-import { ContactUs, NFTCreateDetailsSection } from '../index';
+import { ContactUs } from '../index';
 
-function NFTCreateDetails() {
+function Profile() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -32,7 +32,7 @@ function NFTCreateDetails() {
                     </div>
 
                     <div className="flex space-x-2 sm:space-x-4 items-center outfit-bold">
-                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onMouseEnter={() => setIsMenuOpen(true)} onMouseLeave={() => setIsMenuOpen(false)}>
+                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(true)}>
                             <div className='bg-gradient-to-r from-purple-500 to-pink-400 p-3 rounded-full'></div>
                         </button>
 
@@ -87,9 +87,7 @@ function NFTCreateDetails() {
                 </div>
 
             </div>
-            <div>
-                <NFTCreateDetailsSection />
-            </div>
+
 
             {
                 isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
@@ -98,4 +96,4 @@ function NFTCreateDetails() {
     )
 }
 
-export default NFTCreateDetails
+export default Profile

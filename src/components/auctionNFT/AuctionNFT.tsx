@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Logo } from '../../assets';
 import {
     UserIcon,
     EyeIcon,
@@ -6,10 +7,9 @@ import {
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { Logo } from '../../assets';
-import { ContactUs, NFTCreateDetailsSection } from '../index';
+import { ContactUs, AuctionSectionOne } from '../index';
 
-function NFTCreateDetails() {
+function AuctionNFT() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -32,7 +32,7 @@ function NFTCreateDetails() {
                     </div>
 
                     <div className="flex space-x-2 sm:space-x-4 items-center outfit-bold">
-                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onMouseEnter={() => setIsMenuOpen(true)} onMouseLeave={() => setIsMenuOpen(false)}>
+                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(true)}>
                             <div className='bg-gradient-to-r from-purple-500 to-pink-400 p-3 rounded-full'></div>
                         </button>
 
@@ -63,11 +63,11 @@ function NFTCreateDetails() {
                 {isMenuOpen && (
                     <div className="flex flex-col outfit-bold items-start bg-white p-2 rounded-lg shadow-lg absolute top-[103px] lg:right-[27%] lg:w-[9%] sm:w-[25%] sm:right-[47%] sm:top-[120px]">
                         <ul className="space-y-2">
-                            <Link to="/profile">
-                                <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                    <UserIcon className="h-5 w-5 text-gray-600" />
-                                    <span>Profile</span>
-                                </li>
+                        <Link to="/profile">
+                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
+                                <UserIcon className="h-5 w-5 text-gray-600" />
+                                <span>Profile</span>
+                            </li>
                             </Link>
                             <li className="border-t border-gray-300 my-2"></li>
                             <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
@@ -79,18 +79,20 @@ function NFTCreateDetails() {
                 )}
 
                 <div className="flex flex-col items-center justify-center text-center mt-10 px-4 mb-10">
-                    <h1 className="text-2xl outfit-bold md:text-5xl font-bold text-gray-900 ">
-                        NFT Details
+                    <h1 className="text-2xl outfit-bold md:text-5xl font-bold text-gray-900">
+                        Bid on Exclusive Auction NFTs
                     </h1>
-                    <p className="outfit-light mt-4 text-gray-600 max-w-2xl ">
-                        Here you can view the complete details of your NFT, including its attributes, owner, and current status. Stay informed about its market value and upcoming events. Check out more info about this unique digital collectible, and explore the possibilities of its future.</p>
+                    <p className="outfit-light mt-4 text-gray-600 max-w-2xl">
+                        Bid on exclusive Auction NFTs—unique art, rare collectibles, and more. Compete for one-of-a-kind digital assets and elevate your collection!
+                    </p>
+
                 </div>
+
 
             </div>
             <div>
-                <NFTCreateDetailsSection />
+                <AuctionSectionOne />
             </div>
-
             {
                 isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
             }
@@ -98,4 +100,4 @@ function NFTCreateDetails() {
     )
 }
 
-export default NFTCreateDetails
+export default AuctionNFT

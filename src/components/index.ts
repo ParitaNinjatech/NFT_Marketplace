@@ -31,6 +31,10 @@ import NFTCreateDetailsSection from "./nftDetailSection/NFTCreateDetailsSection"
 import BuyingProgressBar from "./processBar/BuyProgressBar";
 import PlaceBid from "./placeBid/PlaceBid";
 import BuyNFT from "./buyNFT/BuyNFT";
+import BuyNFTSectionOne from "./buyNFTSection/BuyNFTSectionone";
+import AuctionNFT from "./auctionNFT/AuctionNFT";
+import AuctionSectionOne from "./auctionSection/AuctionSectionOne";
+import Profile from "./profile/Profile";
 
 export {
     Home,
@@ -65,5 +69,9 @@ export {
     NFTCreateDetailsSection,
     BuyingProgressBar,
     PlaceBid,
-    BuyNFT
+    BuyNFT,
+    BuyNFTSectionOne,
+    AuctionNFT,
+    AuctionSectionOne,
+    Profile
 }

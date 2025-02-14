@@ -4,15 +4,11 @@ import { Logo } from '../../assets';
 import {
     UserIcon,
     EyeIcon,
-    Cog6ToothIcon,
-    ArrowLeftStartOnRectangleIcon,
-    BookOpenIcon,
-    QuestionMarkCircleIcon,
     Bars4Icon,
     XMarkIcon,
     Link,
 } from "../../common/index";
-import { ContactUs } from '../index';
+import { ContactUs, BuyNFTSectionOne } from '../index';
 
 function BuyNFT() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -30,14 +26,14 @@ function BuyNFT() {
                     </Link>
                     <div className="hidden md:flex space-x-6 text-gray-700 font-medium outfit-bold">
                         <a href="/createNFT">Create NFT</a>
-                        <a href="#">Buy NFT</a>
-                        <a href="#">Auction NFT</a>
+                        <a href="/buyNFT">Buy NFT</a>
+                        <a href="/auctionNFT">Auction NFT</a>
                         <a href="#">Stake NFT</a>
                         <a href="/aboutUs">About Us</a>
                     </div>
 
                     <div className="flex space-x-2 sm:space-x-4 items-center outfit-bold">
-                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(true)}>
                             <div className='bg-gradient-to-r from-purple-500 to-pink-400 p-3 rounded-full'></div>
                         </button>
 
@@ -58,8 +54,8 @@ function BuyNFT() {
                 {isOpen && (
                     <div className="md:hidden outfit-bold flex flex-col items-start bg-white p-5 rounded-lg shadow-lg absolute top-[130px] left-[53%] w-[35%]">
                         <a href="/createNFT" className="block py-2">Create NFT</a>
-                        <a href="#" className="block py-2">Buy NFT</a>
-                        <a href="#" className="block py-2">Auction NFT</a>
+                        <a href="/buyNFT" className="block py-2">Buy NFT</a>
+                        <a href="/auctionNFT" className="block py-2">Auction NFT</a>
                         <a href="#" className="block py-2">Stake NFT</a>
                         <a href="/aboutUs" className="block py-2">About Us</a>
                     </div>
@@ -68,53 +64,38 @@ function BuyNFT() {
                 {isMenuOpen && (
                     <div className="flex flex-col outfit-bold items-start bg-white p-2 rounded-lg shadow-lg absolute top-[103px] lg:right-[27%] lg:w-[9%] sm:w-[25%] sm:right-[47%] sm:top-[120px]">
                         <ul className="space-y-2">
-                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                <UserIcon className="h-5 w-5 text-gray-600" />
-                                <span>Profile</span>
-                            </li>
+                            <Link to="/profile">
+                                <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
+                                    <UserIcon className="h-5 w-5 text-gray-600" />
+                                    <span>Profile</span>
+                                </li>
+                            </Link>
+                            <li className="border-t border-gray-300 my-2"></li>
                             <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
                                 <EyeIcon className="h-5 w-5 text-gray-600" />
                                 <span>Watchlist</span>
-                            </li>
-                            <li className="border-t border-gray-300 my-2"></li>
-                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                <Cog6ToothIcon className="h-5 w-5 text-gray-600" />
-                                <span>Settings</span>
-                            </li>
-                            <li className="border-t border-gray-300 my-2"></li>
-                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                <ArrowLeftStartOnRectangleIcon className="h-5 w-5 text-gray-600" />
-                                <span>Log Out</span>
-                            </li>
-                            <li className="border-t border-gray-300 my-2"></li>
-                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                <BookOpenIcon className="h-5 w-5 text-gray-600" />
-                                <span>Learn</span>
-                            </li>
-                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                <QuestionMarkCircleIcon className="h-5 w-5 text-gray-600" />
-                                <span>Help Center</span>
-                            </li>
-                            <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">
-                                <QuestionMarkCircleIcon className="h-5 w-5 text-gray-600" />
-                                <span>Support</span>
                             </li>
                         </ul>
                     </div>
                 )}
 
                 <div className="flex flex-col items-center justify-center text-center mt-10 px-4 mb-10">
-                    <h1 className="text-2xl outfit-bold md:text-5xl font-bold text-gray-900 ">
-                        Create Your NFT
+                    <h1 className="text-2xl outfit-bold md:text-5xl font-bold text-gray-900">
+                        Buy Your NFT
                     </h1>
-                    <p className="outfit-light mt-4 text-gray-600 max-w-2xl ">
-                        NFTs are unique digital assets on the blockchain, like art, music, and more. This platform allows you to easily mint and share your own creations.</p>
+                    <p className="outfit-light mt-4 text-gray-600 max-w-2xl">
+                        NFTs are unique digital assets on the blockchain, such as art, music, and more. Explore and purchase exclusive NFTs from talented creators on our platform.
+                    </p>
                 </div>
+
+
 
 
             </div>
 
-
+            <div>
+                <BuyNFTSectionOne />
+            </div>
             {
                 isModalOpen && (<ContactUs isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />)
             }

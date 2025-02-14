@@ -49,6 +49,9 @@ import HandHeart from "./heart.png";
 import AirDrop from "./parachute.png";
 import BlankFile from "./BlankList.png";
 import Offers from "./Offers.png";
+import Ethereum from "./ethereum.png";
+import Dollar from "./dollar.png";
+import EndTime from "./endTime.gif";
 
 export {
     Logo,
@@ -78,5 +81,6 @@ export {
     Youtube,
     Discord,
     Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8, TeamWork, Artist, NFT, World, Grid, Shield, Hammer, Create, Required,
-    UploadImage, CheckMark, Redirect, Cilp, HandHeart, AirDrop, BlankFile, Offers
+    UploadImage, CheckMark, Redirect, Cilp, HandHeart, AirDrop, BlankFile, Offers, Ethereum, Dollar, EndTime
+
 }
