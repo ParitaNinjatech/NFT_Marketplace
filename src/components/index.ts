@@ -36,6 +36,7 @@ import AuctionNFT from "./auctionNFT/AuctionNFT";
 import AuctionSectionOne from "./auctionSection/AuctionSectionOne";
 import Profile from "./profile/Profile";
 import ProfileSection from "./profileSection/ProfileSection";
+import ListSectionModal from "./listSection/ListSectionModal";
 
 export {
     Home,
@@ -75,5 +76,6 @@ export {
     AuctionNFT,
     AuctionSectionOne,
     Profile,
-    ProfileSection
+    ProfileSection,
+    ListSectionModal
 }

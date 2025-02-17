@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Cea1, Cea2, Cea3, Cea4, Cea5, Cea6, Cea7, Cea8, Cur1, Cur2, Cur3, Cur4, Cur5, Cur6, Cur7, Dollar, Ethereum, Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8 } from '../../assets';
-import { PencilIcon, ArrowUpOnSquareIcon, ChevronUpDownIcon, WalletIcon } from '../../common';
+import { PencilIcon, ArrowUpOnSquareIcon, ChevronUpDownIcon, TagIcon, LockOpenIcon } from '../../common';
+import ListSectionModal from '../listSection/ListSectionModal';
 
-const tabs = ['Vault / Crafted', 'On sale', ' On Auction', 'On Stake'];
+const tabs = ['Vault / Crafted', 'On Stake'];
 
 const nftData = [
     { id: 1, title: "Right Messages", price: "1.90 ", author: "Martina Brito", likes: 24, Creator: Team1, time: "2025-02-14T10:40:57", image: Cur1, category: "On sale", LastPrice: "1403.110" },
@@ -30,18 +31,28 @@ function ProfileSection() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [isAscending, setIsAscending] = useState<boolean>(true);
     const [hoveredNFTs, setHoveredNFTs] = useState<Set<number>>(new Set());
+    const [isListingModal,setIsListingModal] = useState<boolean>(false);
     const itemsPerPage = 12;
 
-    const filteredNFTs = nftData.filter(nft =>
-        nft &&
-        (activeTab === "Vault / Crafted" || nft.category === activeTab)
-    );
+    const filteredNFTs = nftData.filter(nft => {
+        if (activeTab === "Vault / Crafted") {
+            return nft.category === "Vault / Crafted" || nft.category === "On Auction" || nft.category === "On sale";
+        } else if (activeTab === "On Stake") {
+            return nft.category === "On Stake";
+        }
+        return false;
+    });
+
+
 
     const sortedNFTs = filteredNFTs.sort((a, b) => {
+        const dateA = new Date(a.time);
+        const dateB = new Date(b.time);
+
         if (isAscending) {
-            return a.likes - b.likes;
+            return dateA.getTime() - dateB.getTime();
         } else {
-            return b.likes - a.likes;
+            return dateB.getTime() - dateA.getTime();
         }
     });
 
@@ -150,7 +161,7 @@ function ProfileSection() {
                         onClick={() => setIsAscending(!isAscending)}
                         className="px-4 py-2 bg-gray-200 rounded-md flex items-center hover:bg-gray-300"
                     >
-                        <ChevronUpDownIcon className="mr-2 h-8 w-8" /> Sort by
+                        <ChevronUpDownIcon className="mr-2 h-8 w-8" /> Sort by Date
                     </button>
                 </div>
             </div>
@@ -177,27 +188,39 @@ function ProfileSection() {
                             <h3 className="font-bold text-lg outfit-bold">{nft.title}</h3>
 
                             <div className="flex items-center justify-between mt-2">
-                                <p className="text-gray-700 text-md outfit-light">Bid Creator</p>
-                                <p className="flex gap-2 text-gray-700 text-md outfit-light"><img src={nft.Creator} alt={nft.title} className="w-7 h-7 rounded-full " />{nft.author} </p>
+                                <p className="text-gray-700 text-md outfit-light">Price</p>
+                                <p className="flex gap-2 text-gray-700 text-lg outfit-light"><img src={Dollar} alt={nft.title} className="w-5 h-5 mt-1" />{nft.price} ETH</p>
                             </div>
                         </div>
 
-                        {hoveredNFTs.has(nft.id) ? (
+                        {hoveredNFTs.has(nft.id) && (
                             <div >
-                                <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
-                                    <WalletIcon className="w-10 h-7 ml-3" />
-                                    <span>Place bid</span>
-                                </button>
-                            </div>
-                        ) : (
-                            <div className="p-4 mt-2">
-                                <div className="flex items-center justify-between ">
-                                    <p className="text-gray-700 text-md outfit-light">Last Bid</p>
-                                    <p className="flex gap-2 text-gray-700 text-md outfit-light"><img src={Dollar} alt={nft.title} className="w-5 h-5 mt-1" />{nft.LastPrice}</p>
-                                </div>
+
+                                {
+                                    nft.category === "Vault / Crafted" ? (
+                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300" onClick={() => setIsListingModal(true)}>
+                                            <TagIcon className="w-10 h-7 ml-3" />
+                                            <span>Listing for sale</span>
+                                        </button>
+                                    ) : nft.category === "On sale" ? (
+                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
+                                            <PencilIcon className="w-10 h-7 ml-3" />
+                                            <span>Edit Listing</span>
+                                        </button>
+                                    ) : nft.category === "On Auction" ? (
+                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
+                                            <PencilIcon className="w-10 h-7 ml-3" />
+                                            <span>Edit Auction</span>
+                                        </button>
+                                    ) : (
+                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
+                                            <LockOpenIcon className="w-10 h-7 ml-3" />
+                                            <span>UnStake NFT</span>
+                                        </button>
+                                    )
+                                }
                             </div>
                         )}
-
                     </div>
                 ))}
             </div>
@@ -247,8 +270,13 @@ function ProfileSection() {
                 </div>
             </div>
 
+            {
+                isListingModal && <ListSectionModal isOpen={isListingModal} onClose={() => setIsListingModal(false)} saleType={''} />
+            }
+
         </div>
     )
 }
+
 
 export default ProfileSection;

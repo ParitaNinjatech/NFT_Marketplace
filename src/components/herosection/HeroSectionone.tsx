@@ -17,7 +17,7 @@ function HeroSectionone() {
       image: Cur1,
     },
     {
-      name: "Skyborne - Genesis Imm...",
+      name: "Skyborne",
       floor: "0.04 ETH",
       volume: "1,237 ETH",
       image: Cur2,
@@ -29,7 +29,7 @@ function HeroSectionone() {
       image: Cur3,
     },
     {
-      name: "Nifty Island: Legendary P...",
+      name: "Nifty Island",
       floor: "0.18 ETH",
       volume: "2,317 ETH",
       image: Cur4,
