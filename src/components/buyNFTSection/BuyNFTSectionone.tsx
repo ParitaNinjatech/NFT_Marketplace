@@ -8,22 +8,22 @@ import {
 import { BuyingProgressBar } from "../index"
 
 const nftData = [
-    { id: 1, title: "Right Messages", price: "1.90 Eth", author: "Martina Brito", likes: 24, Creator: Team1, time: "2025-02-14T10:40:57", image: Cur1, category: "Trending", LastPrice: "1403.110" },
-    { id: 2, title: "Brick-and-Mortar Travails", price: "0.45 Flow", author: "Han Chuwen", likes: 19, Creator: Cea1, time: "2025-02-14T06:41:10", image: Cur2, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 3, title: "Free Way to Back Up", price: "0.53 Flow", author: "Langke Zambo", likes: 20, Creator: Cea2, time: "2025-02-14T15:32:10", image: Cur3, category: "Music", LastPrice: "1403.110" },
-    { id: 4, title: "Photography Art", price: "0.80 Flow", author: "John Doe", likes: 40, Creator: Cea3, time: "2025-02-14T05:10:25", image: Cur4, category: "Photography", LastPrice: "1403.110" },
-    { id: 5, title: "Digital Art Piece", price: "1.30 Eth", author: "Jane Smith", likes: 33, Creator: Cea4, time: "2025-02-14T12:00:10", image: Cur5, category: "Trending", LastPrice: "1403.110" },
-    { id: 6, title: "The Music Collection", price: "0.60 Flow", author: "Langke Zambo", likes: 22, Creator: Cea5, time: "2025-02-14T08:25:32", image: Cur6, category: "Music", LastPrice: "1403.110" },
-    { id: 7, title: "Domain NFT", price: "0.25 Flow", author: "Albert Ray", likes: 15, Creator: Cea6, time: "2025-02-14T14:22:58", image: Cur7, category: "Domain Names", LastPrice: "1403.110" },
-    { id: 8, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Cea7, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 9, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Cea8, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 10, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team2, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 11, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team3, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 12, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team4, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 13, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team5, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 14, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team6, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 15, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team7, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
-    { id: 16, title: "Ultimate Collectibles", price: "2.10 Eth", author: "Alex Miller", likes: 50, Creator: Team8, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 1, title: "Right Messages", price: "1.90 ", author: "Martina Brito", likes: 24, Creator: Team1, time: "2025-02-14T10:40:57", image: Cur1, category: "Trending", LastPrice: "1403.110" },
+    { id: 2, title: "Brick-and-Mortar Travails", price: "0.45 ", author: "Han Chuwen", likes: 19, Creator: Cea1, time: "2025-02-14T06:41:10", image: Cur2, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 3, title: "Free Way to Back Up", price: "0.53 ", author: "Langke Zambo", likes: 20, Creator: Cea2, time: "2025-02-14T15:32:10", image: Cur3, category: "Music", LastPrice: "1403.110" },
+    { id: 4, title: "Photography Art", price: "0.80 ", author: "John Doe", likes: 40, Creator: Cea3, time: "2025-02-14T05:10:25", image: Cur4, category: "Photography", LastPrice: "1403.110" },
+    { id: 5, title: "Digital Art Piece", price: "1.30 ", author: "Jane Smith", likes: 33, Creator: Cea4, time: "2025-02-14T12:00:10", image: Cur5, category: "Trending", LastPrice: "1403.110" },
+    { id: 6, title: "The Music Collection", price: "0.60 ", author: "Langke Zambo", likes: 22, Creator: Cea5, time: "2025-02-14T08:25:32", image: Cur6, category: "Music", LastPrice: "1403.110" },
+    { id: 7, title: "Domain NFT", price: "0.25 ", author: "Albert Ray", likes: 15, Creator: Cea6, time: "2025-02-14T14:22:58", image: Cur7, category: "Domain Names", LastPrice: "1403.110" },
+    { id: 8, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Cea7, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 9, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Cea8, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 10, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team2, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 11, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team3, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 12, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team4, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 13, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team5, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 14, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team6, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 15, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team7, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
+    { id: 16, title: "Ultimate Collectibles", price: "2.10 ", author: "Alex Miller", likes: 50, Creator: Team8, time: "2025-02-14T11:11:30", image: Cea8, category: "Collectibles", LastPrice: "1403.110" },
 ];
 
 const tabs = ["All", "Trending", "Collectibles", "Domain Names", "Music", "Photography"];
@@ -162,7 +162,7 @@ function BuyNFTSectionOne() {
 
                             <div className="flex items-center justify-between mt-2">
                                 <p className="text-gray-700 text-lg outfit-light">Price</p>
-                                <p className="flex gap-2 text-gray-700 text-lg outfit-light"><img src={Ethereum} alt={nft.title} className="w-5 h-5 mt-1" />{nft.price}</p>
+                                <p className="flex gap-2 text-gray-700 text-md outfit-light"><img src={Ethereum} alt={nft.title} className="w-5 h-5 mt-1" />{nft.price}ETH</p>
                             </div>
 
                             <div className="flex items-center justify-between mt-2">

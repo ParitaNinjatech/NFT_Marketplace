@@ -33,7 +33,7 @@ function NFTAuctionDetails() {
                     </div>
 
                     <div className="flex space-x-2 sm:space-x-4 items-center outfit-bold">
-                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(true)}>
+                        <button className="border border-purple-600 text-purple-600 p-2 rounded-lg" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                             <div className='bg-gradient-to-r from-purple-500 to-pink-400 p-3 rounded-full'></div>
                         </button>
 

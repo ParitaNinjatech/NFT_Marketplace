@@ -35,6 +35,7 @@ import BuyNFTSectionOne from "./buyNFTSection/BuyNFTSectionone";
 import AuctionNFT from "./auctionNFT/AuctionNFT";
 import AuctionSectionOne from "./auctionSection/AuctionSectionOne";
 import Profile from "./profile/Profile";
+import ProfileSection from "./profileSection/ProfileSection";
 
 export {
     Home,
@@ -73,5 +74,6 @@ export {
     BuyNFTSectionOne,
     AuctionNFT,
     AuctionSectionOne,
-    Profile
+    Profile,
+    ProfileSection
 }

@@ -15,7 +15,8 @@ import {
     ArrowLongRightIcon, HeartIcon, PaperClipIcon, SparklesIcon, ClockIcon,
     ShoppingCartIcon, ChevronDownIcon, Bars3BottomRightIcon, QrCodeIcon, TagIcon,
     ArrowsRightLeftIcon, ChevronUpIcon, Bars3BottomLeftIcon,
-    AdjustmentsHorizontalIcon, ChevronUpDownIcon, PencilIcon, TrashIcon, PlusIcon
+    AdjustmentsHorizontalIcon, ChevronUpDownIcon, PencilIcon, TrashIcon, PlusIcon,
+    ArrowUpOnSquareIcon
 } from "@heroicons/react/24/outline";
 import { Link, Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
@@ -41,6 +42,6 @@ export {
     PencilIcon, TrashIcon, PlusIcon, Dialog, Circle, ArrowLongRightIcon, HeartIcon,
     PaperClipIcon, SparklesIcon, ClockIcon, ShoppingCartIcon, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
     ChevronDownIcon, Bars3BottomRightIcon, QrCodeIcon, TagIcon, ArrowsRightLeftIcon, ChevronUpIcon, Bars3BottomLeftIcon,
-    AdjustmentsHorizontalIcon, ChevronUpDownIcon
+    AdjustmentsHorizontalIcon, ChevronUpDownIcon , ArrowUpOnSquareIcon
 
 }
