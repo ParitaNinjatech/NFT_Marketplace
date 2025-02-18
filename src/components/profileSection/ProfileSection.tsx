@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Cea1, Cea2, Cea3, Cea4, Cea5, Cea6, Cea7, Cea8, Cur1, Cur2, Cur3, Cur4, Cur5, Cur6, Cur7, Dollar, Ethereum, Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8 } from '../../assets';
 import { PencilIcon, ArrowUpOnSquareIcon, ChevronUpDownIcon, TagIcon, LockOpenIcon } from '../../common';
-import ListSectionModal from '../listSection/ListSectionModal';
+import { ListProgressBar, ListSectionModal, ListSectionTwo, ListEditingModal } from '../index'
+import { CancelProgressBar } from '../index';
 
 const tabs = ['Vault / Crafted', 'On Stake'];
 
@@ -31,7 +32,14 @@ function ProfileSection() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [isAscending, setIsAscending] = useState<boolean>(true);
     const [hoveredNFTs, setHoveredNFTs] = useState<Set<number>>(new Set());
-    const [isListingModal,setIsListingModal] = useState<boolean>(false);
+    const [isListingModal, setIsListingModal] = useState<boolean>(false);
+    const [loadingforLoader, setLoadingforLoader] = useState<boolean>(false);
+    const [listingSuccess, setListingSuccess] = useState<boolean | null>(null);
+    const [saleType, setSaleType] = useState<string>("");
+    const [listingStart, setListingStart] = useState<boolean>(false);
+    const [selectNFTDetailForEditSale, setSelectNFTDetailEditSale] = useState<any>(null);
+    const [openEditSaleModal, setOpenEditSaleModal] = useState<boolean>(false);
+    const [cancelListing, setCancelListing] = useState<boolean>(false);
     const itemsPerPage = 12;
 
     const filteredNFTs = nftData.filter(nft => {
@@ -44,6 +52,21 @@ function ProfileSection() {
     });
 
 
+    const handleListingComplete = (isSuccess: boolean) => {
+        setListingSuccess(isSuccess);
+    };
+
+    const handleListingStart = (isStart: boolean) => {
+        setListingStart(isStart);
+    }
+
+    const handleSaleTypeChange = (saleType: string) => {
+        setSaleType(saleType);
+    }
+
+    const handleCancel = (isCancel: boolean) => {
+        setCancelListing(isCancel)
+    }
 
     const sortedNFTs = filteredNFTs.sort((a, b) => {
         const dateA = new Date(a.time);
@@ -173,7 +196,7 @@ function ProfileSection() {
                         className="bg-white rounded-xl shadow-md overflow-hidden relative hover:scale-105 transition duration-300"
                         style={{
                             boxShadow: "0px 4px 15px 0px rgba(0, 0, 0, 0.1), 0px 1px 10px 0px rgba(255, 105, 180, 0.5), 0px 10px 50px 0px rgba(204, 153, 255, 0.3)",
-                            minHeight: "400px",
+                            minHeight: "370px",
                         }}
                         onMouseEnter={() => handleMouseEnter(nft.id)}
                         onMouseLeave={() => handleMouseLeave(nft.id)}
@@ -198,22 +221,24 @@ function ProfileSection() {
 
                                 {
                                     nft.category === "Vault / Crafted" ? (
-                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300" onClick={() => setIsListingModal(true)}>
+                                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300" onClick={() => setIsListingModal(true)}>
                                             <TagIcon className="w-10 h-7 ml-3" />
                                             <span>Listing for sale</span>
                                         </button>
                                     ) : nft.category === "On sale" ? (
-                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
-                                            <PencilIcon className="w-10 h-7 ml-3" />
-                                            <span>Edit Listing</span>
+                                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300"
+                                            onClick={() => (setSelectNFTDetailEditSale(nft), setOpenEditSaleModal(true))}>
+                                            <PencilIcon className="w-7 h-7 ml-3" />
+                                            <span className='ml-2'>Edit Listing</span>
                                         </button>
                                     ) : nft.category === "On Auction" ? (
-                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
-                                            <PencilIcon className="w-10 h-7 ml-3" />
-                                            <span>Edit Auction</span>
+                                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300"
+                                            onClick={() => (setSelectNFTDetailEditSale(nft), setOpenEditSaleModal(true))}>
+                                            <PencilIcon className="w-7 h-7 ml-3" />
+                                            <span className='ml-2'>Edit Auction</span>
                                         </button>
                                     ) : (
-                                        <button className="w-full mt-8 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
+                                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300">
                                             <LockOpenIcon className="w-10 h-7 ml-3" />
                                             <span>UnStake NFT</span>
                                         </button>
@@ -271,7 +296,31 @@ function ProfileSection() {
             </div>
 
             {
-                isListingModal && <ListSectionModal isOpen={isListingModal} onClose={() => setIsListingModal(false)} saleType={''} />
+                isListingModal && <ListSectionModal isOpen={isListingModal} onClose={() => setIsListingModal(false)} onMintComplete={handleListingStart} onSaleType={handleSaleTypeChange} />
+            }
+
+            {
+                listingStart && saleType && (
+                    <ListProgressBar loading={true} onCloseLoading={() => setLoadingforLoader(false)} isOpen={listingStart} onClose={() => setListingStart(false)} onMintComplete={handleListingComplete} />
+                )
+            }
+
+            {
+                listingSuccess && (
+                    <ListSectionTwo isOpen={listingSuccess} onClose={() => setListingSuccess(false)} saleType={saleType} />
+                )
+            }
+
+            {
+                openEditSaleModal && selectNFTDetailForEditSale && (
+                    <ListEditingModal isOpen={openEditSaleModal} onClose={() => setOpenEditSaleModal(false)} nftDetails={selectNFTDetailForEditSale} onMintComplete={handleListingStart} onSaleType={handleSaleTypeChange} onCancelSale={handleCancel} />
+                )
+            }
+
+            {
+                cancelListing && (
+                    <CancelProgressBar isOpen={cancelListing} onClose={() => setCancelListing(false)} loading={true} onCloseLoading={() => setLoadingforLoader(false)} />
+                )
             }
 
         </div>

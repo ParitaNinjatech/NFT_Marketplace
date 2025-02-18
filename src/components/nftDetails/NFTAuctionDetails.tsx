@@ -28,7 +28,7 @@ function NFTAuctionDetails() {
                         <a href="/createNFT">Create NFT</a>
                         <a href="/buyNFT">Buy NFT</a>
                         <a href="/auctionNFT">Auction NFT</a>
-                        <a href="#">Stake NFT</a>
+                        <a href="/stakeNFT">Stake NFT</a>
                         <a href="/aboutUs">About Us</a>
                     </div>
 
@@ -56,13 +56,13 @@ function NFTAuctionDetails() {
                         <a href="/createNFT" className="block py-2">Create NFT</a>
                         <a href="/buyNFT" className="block py-2">Buy NFT</a>
                         <a href="/auctionNFT" className="block py-2">Auction NFT</a>
-                        <a href="#" className="block py-2">Stake NFT</a>
+                        <a href="/stakeNFT" className="block py-2">Stake NFT</a>
                         <a href="/aboutUs" className="block py-2">About Us</a>
                     </div>
                 )}
 
                 {isMenuOpen && (
-                    <div className="flex flex-col outfit-bold items-start bg-white p-2 rounded-lg shadow-lg absolute top-[103px] lg:right-[27%] lg:w-[9%] sm:w-[25%] sm:right-[47%] sm:top-[120px]">
+                    <div className="flex flex-col outfit-bold items-start bg-white p-2 rounded-lg shadow-lg absolute top-[103px] lg:right-[27%] lg:w-[8%] sm:w-[25%] sm:right-[47%] sm:top-[120px]">
                         <ul className="space-y-2">
                             <Link to="/profile">
                                 <li className="flex items-center space-x-3 p-2 hover:bg-gray-100 rounded-md">

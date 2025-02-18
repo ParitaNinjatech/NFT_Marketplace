@@ -37,6 +37,10 @@ import AuctionSectionOne from "./auctionSection/AuctionSectionOne";
 import Profile from "./profile/Profile";
 import ProfileSection from "./profileSection/ProfileSection";
 import ListSectionModal from "./listSection/ListSectionModal";
+import ListEditingModal from "./listSection/ListEditingModal";
+import CancelProgressBar from "./processBar/CancelProgressBar";
+import StakeNFT from "./stakeNFT/StakeNFT";
+import StakeNFTSection from "./stakeNFTSection/StakeNFTSection"
 
 export {
     Home,
@@ -77,5 +81,9 @@ export {
     AuctionSectionOne,
     Profile,
     ProfileSection,
-    ListSectionModal
+    ListSectionModal,
+    ListEditingModal,
+    CancelProgressBar,
+    StakeNFT,
+    StakeNFTSection
 }

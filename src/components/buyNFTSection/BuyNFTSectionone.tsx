@@ -7,7 +7,7 @@ import {
 } from "../../assets";
 import { BuyingProgressBar } from "../index"
 
-const nftData = [
+const nftData: any = [
     { id: 1, title: "Right Messages", price: "1.90 ", author: "Martina Brito", likes: 24, Creator: Team1, time: "2025-02-14T10:40:57", image: Cur1, category: "Trending", LastPrice: "1403.110" },
     { id: 2, title: "Brick-and-Mortar Travails", price: "0.45 ", author: "Han Chuwen", likes: 19, Creator: Cea1, time: "2025-02-14T06:41:10", image: Cur2, category: "Collectibles", LastPrice: "1403.110" },
     { id: 3, title: "Free Way to Back Up", price: "0.53 ", author: "Langke Zambo", likes: 20, Creator: Cea2, time: "2025-02-14T15:32:10", image: Cur3, category: "Music", LastPrice: "1403.110" },
@@ -38,12 +38,12 @@ function BuyNFTSectionOne() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const itemsPerPage = 12;
 
-    const filteredNFTs = nftData.filter(nft =>
+    const filteredNFTs = nftData.filter((nft: any) =>
         nft &&
         (activeTab === "All" || nft.category === activeTab)
     );
 
-    const sortedNFTs = filteredNFTs.sort((a, b) => {
+    const sortedNFTs = filteredNFTs.sort((a: any, b: any) => {
         if (isAscending) {
             return a.likes - b.likes;
         } else {
@@ -122,76 +122,90 @@ function BuyNFTSectionOne() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-20">
-                {currentNFTs.map(nft => (
-                    <div
-                        key={nft.id}
-                        className="bg-white rounded-xl shadow-md overflow-hidden relative hover:scale-105 transition duration-300"
-                        style={{
-                            boxShadow: "0px 4px 15px 0px rgba(0, 0, 0, 0.1), 0px 1px 10px 0px rgba(255, 105, 180, 0.5), 0px 10px 50px 0px rgba(204, 153, 255, 0.3)",
-                            minHeight: "400px",
-                        }}
-                        onMouseEnter={() => handleMouseEnter(nft.id)}
-                        onMouseLeave={() => handleMouseLeave(nft.id)}
-                    >
-                        <div className="relative">
-                            <img src={nft.image} alt={nft.title} className="w-full h-56 object-cover" />
-
-                            <div className="absolute top-4 left-4 text-gray-600 bg-white rounded-full px-2 py-1">
-                                <p className="flex items-center gap-1 outfit-light">
-                                    {
-                                        favoriteNFTs.has(nft.id) ? (
-                                            <HeartSolidIcon
-                                                className="h-5 w-5 text-red-500"
-                                                onClick={() => toggleFavorite(nft.id)}
-                                            />
-                                        ) : (
-                                            <HeartIcon
-                                                className="h-5 w-5"
-                                                onClick={() => toggleFavorite(nft.id)}
-                                            />
-                                        )
-                                    }
-                                    {nft.likes}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="p-4 ">
-
-                            <h3 className="font-bold text-xl outfit-bold">{nft.title}</h3>
-
-                            <div className="flex items-center justify-between mt-2">
-                                <p className="text-gray-700 text-lg outfit-light">Price</p>
-                                <p className="flex gap-2 text-gray-700 text-md outfit-light"><img src={Ethereum} alt={nft.title} className="w-5 h-5 mt-1" />{nft.price}ETH</p>
-                            </div>
-
-                            <div className="flex items-center justify-between mt-2">
-                                <p className="text-gray-700 text-lg outfit-light">Creator</p>
-                                <p className="flex gap-2 text-gray-700 text-lg outfit-light"><img src={nft.Creator} alt={nft.title} className="w-7 h-7 rounded-full " />{nft.author} </p>
-                            </div>
-                        </div>
-
-                        {hoveredNFTs.has(nft.id) ? (
-                            <div className="">
-                                <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300" onClick={() => setIsBuyingProcess(true)}>
-                                    <span>Buy Now</span>
-                                    <ShoppingCartIcon className="w-10 h-7 ml-3" />
-                                </button>
-                            </div>
-                        ) : (
-                            <div className="p-4 mt-2">
-                                <div className="flex items-center justify-between ">
-                                    <p className="text-gray-700 text-lg outfit-light">Last Price</p>
-                                    <p className="flex gap-2 text-gray-700 text-lg outfit-light"><img src={Dollar} alt={nft.title} className="w-5 h-5 mt-1" />{nft.LastPrice}</p>
+                {currentNFTs.length > 0 ? (
+                    currentNFTs.map((nft: any) => (
+                        <div
+                            key={nft.id}
+                            className="bg-white rounded-xl shadow-md overflow-hidden relative hover:scale-105 transition duration-300"
+                            style={{
+                                boxShadow: "0px 4px 15px 0px rgba(0, 0, 0, 0.1), 0px 1px 10px 0px rgba(255, 105, 180, 0.5), 0px 10px 50px 0px rgba(204, 153, 255, 0.3)",
+                                minHeight: "400px",
+                            }}
+                            onMouseEnter={() => handleMouseEnter(nft.id)}
+                            onMouseLeave={() => handleMouseLeave(nft.id)}
+                        >
+                            <div className="relative">
+                                <img src={nft.image} alt={nft.title} className="w-full h-56 object-cover" />
+                                <div className="absolute top-4 left-4 text-gray-600 bg-white rounded-full px-2 py-1">
+                                    <p className="flex items-center gap-1 outfit-light">
+                                        {
+                                            favoriteNFTs.has(nft.id) ? (
+                                                <HeartSolidIcon
+                                                    className="h-5 w-5 text-red-500"
+                                                    onClick={() => toggleFavorite(nft.id)}
+                                                />
+                                            ) : (
+                                                <HeartIcon
+                                                    className="h-5 w-5"
+                                                    onClick={() => toggleFavorite(nft.id)}
+                                                />
+                                            )
+                                        }
+                                        {nft.likes}
+                                    </p>
                                 </div>
                             </div>
-                        )}
 
-                    </div>
-                ))}
+                            <div className="p-4 ">
+                                <h3 className="font-bold text-xl outfit-bold">{nft.title}</h3>
+                                <div className="flex items-center justify-between mt-2">
+                                    <p className="text-gray-700 text-lg outfit-light">Price</p>
+                                    <p className="flex gap-2 text-gray-700 text-md outfit-light">
+                                        <img src={Ethereum} alt={nft.title} className="w-5 h-5 mt-1" />
+                                        {nft.price}ETH
+                                    </p>
+                                </div>
+
+                                <div className="flex items-center justify-between mt-2">
+                                    <p className="text-gray-700 text-lg outfit-light">Creator</p>
+                                    <p className="flex gap-2 text-gray-700 text-lg outfit-light">
+                                        <img src={nft.Creator} alt={nft.title} className="w-7 h-7 rounded-full " />
+                                        {nft.author}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {hoveredNFTs.has(nft.id) ? (
+                                <div className="">
+                                    <button
+                                        className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-3 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300"
+                                        onClick={() => setIsBuyingProcess(true)}
+                                    >
+                                        <span>Buy Now</span>
+                                        <ShoppingCartIcon className="w-10 h-7 ml-3" />
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="p-4 mt-2">
+                                    <div className="flex items-center justify-between ">
+                                        <p className="text-gray-700 text-lg outfit-light">Last Price</p>
+                                        <p className="flex gap-2 text-gray-700 text-lg outfit-light">
+                                            <img src={Dollar} alt={nft.title} className="w-5 h-5 mt-1" />
+                                            {nft.LastPrice}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    ))
+                ) : (
+                    <p className="text-3xl font-bold text-center text-black w-full ml-[160%] ">No NFTs Found</p>
+                )}
             </div>
 
-            <div className="flex justify-between items-center mt-10 w-full">
+        {
+            currentNFTs.length > 0 && (
+                <div className="flex justify-between items-center mt-10 w-full">
                 <p className="text-gray-600">
                     Showing {indexOfFirstNFT + 1}-
                     {Math.min(indexOfLastNFT, sortedNFTs.length)} of{" "}
@@ -235,8 +249,11 @@ function BuyNFTSectionOne() {
                     </button>
                 </div>
             </div>
+            )
+        }
+           
             {
-             isBuyingProcess && <BuyingProgressBar isOpen={isBuyingProcess} onClose={() => setIsBuyingProcess(false)} />
+                isBuyingProcess && <BuyingProgressBar isOpen={isBuyingProcess} onClose={() => setIsBuyingProcess(false)} />
             }
         </div>
     );
