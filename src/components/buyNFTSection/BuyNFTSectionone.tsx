@@ -96,7 +96,7 @@ function BuyNFTSectionOne() {
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`px-4 py-2 rounded-md font-medium text-md ${activeTab === tab ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                                className={`px-4 py-2 rounded-xl font-medium text-md ${activeTab === tab ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700'}`}
                             >
                                 {tab}
                             </button>
@@ -107,14 +107,14 @@ function BuyNFTSectionOne() {
                 <div className="flex space-x-4 mt-4 sm:mt-0 ml-auto outfit-bold">
                     <button
                         onClick={() => setIsFilterVisible(!isFilterVisible)}
-                        className="px-4 py-2 bg-gray-200 rounded-md flex items-center hover:bg-gray-300"
+                        className="px-4 py-2 bg-gray-200 rounded-xl flex items-center hover:bg-gray-300"
                     >
                         <AdjustmentsHorizontalIcon className="mr-2 h-8 w-8" /> Apply Filter
                     </button>
 
                     <button
                         onClick={() => setIsAscending(!isAscending)}
-                        className="px-4 py-2 bg-gray-200 rounded-md flex items-center hover:bg-gray-300"
+                        className="px-4 py-2 bg-gray-200 rounded-xl flex items-center hover:bg-gray-300"
                     >
                         <ChevronUpDownIcon className="mr-2 h-8 w-8" /> Sort by
                     </button>
@@ -216,7 +216,7 @@ function BuyNFTSectionOne() {
                     <button
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className={`px-4 py-2 rounded ${currentPage === 1
+                        className={`px-4 py-2 rounded-xl ${currentPage === 1
                             ? "bg-gray-200 text-gray-400"
                             : "bg-gradient-to-r from-purple-500 to-pink-400 text-white"
                             }`}
@@ -228,7 +228,7 @@ function BuyNFTSectionOne() {
                         <button
                             key={page + 1}
                             onClick={() => handlePageChange(page + 1)}
-                            className={`px-4 py-2 rounded ${currentPage === page + 1
+                            className={`px-4 py-2 rounded-xl ${currentPage === page + 1
                                 ? "bg-gradient-to-r from-purple-500 to-pink-400 text-white"
                                 : "bg-gray-200 text-gray-600"
                                 }`}
@@ -240,7 +240,7 @@ function BuyNFTSectionOne() {
                     <button
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className={`px-4 py-2 rounded ${currentPage === totalPages
+                        className={`px-4 py-2 rounded-xl ${currentPage === totalPages
                             ? "bg-gray-200 text-gray-400"
                             : "bg-gradient-to-r from-purple-500 to-pink-400 text-white"
                             }`}

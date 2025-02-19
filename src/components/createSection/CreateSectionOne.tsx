@@ -203,7 +203,7 @@ function CreateSectionOne() {
                         </div>
                     </Dialog>
 
-                    <button className="outfit-bold bg-gradient-to-r from-purple-500 to-pink-400 text-white w-52 h-14 rounded-full mt-6 mb-4 ml-[65%] transform -translate-x-1/2" onClick={() => setIsProcess(true)}>
+                    <button className="outfit-bold bg-gradient-to-r from-purple-500 to-pink-400 text-white w-52 h-14 rounded-xl mt-6 mb-4 ml-[65%] transform -translate-x-1/2" onClick={() => setIsProcess(true)}>
                         Create
                     </button>
 

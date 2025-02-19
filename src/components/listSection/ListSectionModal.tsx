@@ -6,7 +6,6 @@ interface ModalProps {
     onClose: () => void;
     onMintComplete: (isSuccess: boolean) => void;
     onSaleType: (saleType: string) => void;
-    
 }
 
 function ListSectionModal({ onClose , onMintComplete , onSaleType }: ModalProps) {

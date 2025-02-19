@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Cea1, Cea2, Cea3, Cea4, Cea5, Cea6, Cea7, Cea8, Cur1, Cur2, Cur3, Cur4, Cur5, Cur6, Cur7, EndTime, Ethereum, Team1 } from "../../assets";
 import { ChevronUpDownIcon, HeartIcon, LockClosedIcon } from "../../common/index";
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
-
+import { StakeNFTSectionModal, StakeProgressBar } from "../index";
 
 const nftStakeData: any = [
     {
@@ -18,7 +18,7 @@ const nftStakeData: any = [
         claimableRewards: "0.05 ETH",
         status: "Staked",
         claimTime: "2025-03-10T12:00:00",
-        likes : 76
+        likes: 76
 
     },
     {
@@ -34,7 +34,7 @@ const nftStakeData: any = [
         claimableRewards: "0.03 ETH",
         status: "Staked",
         claimTime: "2025-03-01T14:45:00",
-        likes : 56
+        likes: 56
 
     },
     {
@@ -50,7 +50,7 @@ const nftStakeData: any = [
         claimableRewards: "0.04 ETH",
         status: "Staked",
         claimTime: "2025-03-10T12:00:00",
-        likes : 52
+        likes: 52
 
     },
     {
@@ -66,7 +66,7 @@ const nftStakeData: any = [
         claimableRewards: "0.06 ETH",
         status: "Staked",
         claimTime: "2025-03-01T14:45:00",
-        likes : 754
+        likes: 754
 
     },
     {
@@ -82,7 +82,7 @@ const nftStakeData: any = [
         claimableRewards: "0.05 ETH",
         status: "Staked",
         claimTime: "2025-03-10T12:00:00",
-        likes : 57410
+        likes: 57410
 
     },
     {
@@ -98,7 +98,7 @@ const nftStakeData: any = [
         claimableRewards: "0.03 ETH",
         status: "Staked",
         claimTime: "2025-03-01T14:45:00",
-        likes : 5602
+        likes: 5602
 
     },
     {
@@ -114,7 +114,7 @@ const nftStakeData: any = [
         claimableRewards: "0.03 ETH",
         status: "Staked",
         claimTime: "2025-03-10T12:00:00",
-        likes : 564154
+        likes: 564154
 
     },
     {
@@ -130,7 +130,7 @@ const nftStakeData: any = [
         claimableRewards: "0.07 ETH",
         status: "Staked",
         claimTime: "2025-03-01T14:45:00",
-        likes : 56154
+        likes: 56154
 
     },
     {
@@ -146,7 +146,7 @@ const nftStakeData: any = [
         claimableRewards: "0.04 ETH",
         status: "Staked",
         claimTime: "2025-03-10T12:00:00",
-        likes : 56214
+        likes: 56214
 
     },
     {
@@ -162,7 +162,7 @@ const nftStakeData: any = [
         claimableRewards: "0.06 ETH",
         status: "Staked",
         claimTime: "2025-03-01T14:45:00",
-        likes : 56154784
+        likes: 56154784
 
     },
     {
@@ -178,7 +178,7 @@ const nftStakeData: any = [
         claimableRewards: "0.05 ETH",
         status: "Staked",
         claimTime: "2025-03-10T12:00:00",
-        likes : 56548784
+        likes: 56548784
 
     },
     {
@@ -194,7 +194,7 @@ const nftStakeData: any = [
         claimableRewards: "0.02 ETH",
         status: "Staked",
         claimTime: "2025-03-01T14:45:00",
-        likes : 5654541
+        likes: 5654541
 
     }
 ];
@@ -203,8 +203,14 @@ function StakeNFTSection() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [favoriteNFTs, setFavoriteNFTs] = useState<Set<number>>(new Set());
     const [isAscending, setIsAscending] = useState<boolean>(true);
-    const [hoveredNFTs, setHoveredNFTs] = useState<Set<number>>(new Set());
+    const [isStakeNFT, setIsStakeNFT] = useState<boolean>(true);
+    const [loadingforLoader, setLoadingforLoader] = useState<boolean>(false);
+    const [listingSuccess, setListingSuccess] = useState<boolean | null>(null);
     const itemsPerPage = 12;
+    const handleListingComplete = (isSuccess: boolean) => {
+        setListingSuccess(isSuccess);
+        console.log("listing completed. Success:", isSuccess);
+    };
 
 
     const sortedNFTs = nftStakeData.sort((a: any, b: any) => {
@@ -241,28 +247,23 @@ function StakeNFTSection() {
         });
     };
 
-    const handleMouseEnter = (id: number) => {
-        setHoveredNFTs(prev => new Set(prev.add(id)));
-    };
-
-    const handleMouseLeave = (id: number) => {
-        setHoveredNFTs(prev => {
-            const newHovered = new Set(prev);
-            newHovered.delete(id);
-            return newHovered;
-        });
-    };
-
     return (
         <div className="container mx-auto mt-16">
-            <div className="flex gap-2 ">
-                <button className='mt-4 ml-[77%] rounded-xl w-50 mt-4 gap-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-4 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300'>
+            <div className="flex gap-3 ">
+                <button
+                    className='mt-4 ml-[77%] rounded-xl w-50 mt-4 gap-2 bg-gradient-to-r from-purple-500 to-pink-400 text-white py-4 flex justify-center items-center hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-300'
+                    onClick={() => {
+                        console.log("Stake & Earn button clicked");
+                        setIsStakeNFT(true);
+                    }}
+                >
                     <LockClosedIcon className="w-6 h-6 font-semibold" /> Stake & Earn
                 </button>
 
+
                 <button
                     onClick={() => setIsAscending(!isAscending)}
-                    className=" py-4 py-1 bg-gray-200 rounded-md  py-4 flex justify-center items-center rounded-xl w-50 mt-4"
+                    className=" py-2 bg-gray-200  flex justify-center items-center rounded-xl w-50 mt-4 hover:bg-gray-300"
                 >
                     <ChevronUpDownIcon className="mr-2 h-8 w-8" /> Sort by
                 </button>
@@ -277,8 +278,6 @@ function StakeNFTSection() {
                             boxShadow: "0px 4px 15px 0px rgba(0, 0, 0, 0.1), 0px 1px 10px 0px rgba(255, 105, 180, 0.5), 0px 10px 50px 0px rgba(204, 153, 255, 0.3)",
                             minHeight: "400px",
                         }}
-                        onMouseEnter={() => handleMouseEnter(nft.id)}
-                        onMouseLeave={() => handleMouseLeave(nft.id)}
                     >
                         <div className="relative">
                             <img src={nft.image} alt={nft.title} className="w-full h-56 object-cover" />
@@ -374,6 +373,13 @@ function StakeNFTSection() {
                     </button>
                 </div>
             </div>
+            {
+                isStakeNFT && <StakeNFTSectionModal isOpen={isStakeNFT} onClose={() => setIsStakeNFT(false)} onStakeComplete={handleListingComplete} />
+            }
+
+            {
+                listingSuccess && <StakeProgressBar isOpen={listingSuccess} onClose={() => setListingSuccess(false)} onMintComplete={handleListingComplete} loading={true} onCloseLoading={() => setLoadingforLoader(false)} />
+            }
         </div>
     )
 }

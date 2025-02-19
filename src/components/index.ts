@@ -40,7 +40,9 @@ import ListSectionModal from "./listSection/ListSectionModal";
 import ListEditingModal from "./listSection/ListEditingModal";
 import CancelProgressBar from "./processBar/CancelProgressBar";
 import StakeNFT from "./stakeNFT/StakeNFT";
-import StakeNFTSection from "./stakeNFTSection/StakeNFTSection"
+import StakeNFTSection from "./stakeNFTSection/StakeNFTSection";
+import StakeNFTSectionModal from "./stakeNFTSection/StakeNFTSectionModal";
+import StakeProgressBar from "./processBar/StakeProgressBar";
 
 export {
     Home,
@@ -85,5 +87,7 @@ export {
     ListEditingModal,
     CancelProgressBar,
     StakeNFT,
-    StakeNFTSection
+    StakeNFTSection,
+    StakeNFTSectionModal,
+    StakeProgressBar
 }

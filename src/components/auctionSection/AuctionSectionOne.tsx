@@ -98,7 +98,7 @@ function AuctionSectionOne() {
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`px-4 py-2 rounded-md font-medium text-md ${activeTab === tab ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                                className={`px-4 py-2 rounded-xl font-medium text-md ${activeTab === tab ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700'}`}
                             >
                                 {tab}
                             </button>
@@ -109,14 +109,14 @@ function AuctionSectionOne() {
                 <div className="flex space-x-4 mt-4 sm:mt-0 ml-auto outfit-bold">
                     <button
                         onClick={() => setIsFilterVisible(!isFilterVisible)}
-                        className="px-4 py-2 bg-gray-200 rounded-md flex items-center hover:bg-gray-300"
+                        className="px-4 py-2 bg-gray-200 rounded-xl flex items-center hover:bg-gray-300"
                     >
                         <AdjustmentsHorizontalIcon className="mr-2 h-8 w-8" /> Apply Filter
                     </button>
 
                     <button
                         onClick={() => setIsAscending(!isAscending)}
-                        className="px-4 py-2 bg-gray-200 rounded-md flex items-center hover:bg-gray-300"
+                        className="px-4 py-2 bg-gray-200 rounded-xl flex items-center hover:bg-gray-300"
                     >
                         <ChevronUpDownIcon className="mr-2 h-8 w-8" /> Sort by
                     </button>
