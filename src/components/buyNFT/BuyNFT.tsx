@@ -87,10 +87,6 @@ function BuyNFT() {
                         NFTs are unique digital assets on the blockchain, such as art, music, and more. Explore and purchase exclusive NFTs from talented creators on our platform.
                     </p>
                 </div>
-
-
-
-
             </div>
 
             <div>

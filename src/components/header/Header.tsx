@@ -90,9 +90,11 @@ function Header() {
                             Explore, acquire, and trade unique crypto collectibles and NFTs in a world of exclusive digital assets.
                         </p>
                         <div className="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 outfit-bold">
-                            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-2">
-                                Explore NFTs <ArrowLongRightIcon className="w-5 h-5" />
-                            </button>
+                            <Link to="/buyNFT">
+                                <button className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold w-full sm:w-auto flex items-center justify-center gap-2">
+                                    Explore NFTs <ArrowLongRightIcon className="w-5 h-5" />
+                                </button>
+                            </Link>
                             <button className="border border-purple-600 text-purple-600 px-6 py-3 rounded-lg flex items-center justify-center w-full sm:w-auto">
                                 <Link to="/aboutUs">
                                     About Us
