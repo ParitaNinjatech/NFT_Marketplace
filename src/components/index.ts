@@ -43,6 +43,7 @@ import StakeNFT from "./stakeNFT/StakeNFT";
 import StakeNFTSection from "./stakeNFTSection/StakeNFTSection";
 import StakeNFTSectionModal from "./stakeNFTSection/StakeNFTSectionModal";
 import StakeProgressBar from "./processBar/StakeProgressBar";
+import Creator from "./creator/Creator";
 
 export {
     Home,
@@ -89,5 +90,6 @@ export {
     StakeNFT,
     StakeNFTSection,
     StakeNFTSectionModal,
-    StakeProgressBar
+    StakeProgressBar,
+    Creator
 }

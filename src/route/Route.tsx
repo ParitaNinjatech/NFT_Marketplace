@@ -1,4 +1,4 @@
-import { Home, Footer, AboutUs, CreateNFT, ListSale, NFTDetails, NFTAuctionDetails ,NFTCreateDetails ,BuyNFT , AuctionNFT , Profile, StakeNFT } from "../components/index";
+import { Home, Footer, AboutUs, CreateNFT, ListSale, NFTDetails, NFTAuctionDetails ,NFTCreateDetails ,BuyNFT , AuctionNFT , Profile, StakeNFT , Creator } from "../components/index";
 import { Routes, Route, useLocation } from "../common/index";
 
 export default function Router() {
@@ -18,6 +18,7 @@ export default function Router() {
                 <Route path="/auctionNFT" element={<AuctionNFT />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/stakeNFT" element={<StakeNFT />} />
+                <Route path="/creatorDetails" element={<Creator />} />
             </Routes>
             {!noHeaderRoutes.includes(location.pathname) && <Footer />}
         </>

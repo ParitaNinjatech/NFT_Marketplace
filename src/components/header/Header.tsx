@@ -11,9 +11,9 @@ import {
 import { Carousel, HeroSectionone, HeroSectionTwo, HeroSectionThree, HeroSectionFour, HeroSectionFive, ContactUs } from "../../components/index";
 
 function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     return (
         <>
